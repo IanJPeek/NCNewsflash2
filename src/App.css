@@ -21,7 +21,7 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: white
 }
 
 .App-link {
@@ -35,4 +35,15 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+li {
+  list-style-type: none;
+  border: solid black 1px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+} 
+
+.hypertext{
+  text-decoration: none;
 }
