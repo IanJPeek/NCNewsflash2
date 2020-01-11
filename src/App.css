@@ -47,3 +47,45 @@ li {
 .hypertext{
   text-decoration: none;
 }
+
+
+.NavBar {
+  height: 23px;
+  background-color: rgba(8, 8, 8, 0.938)
+}
+
+.NavButton {
+  background-color: red;
+  border: solid white 1px;
+  font-size: 12px;
+  border-radius: 5px;
+  border-color: white
+}
+
+.NavLabel {
+  color: red
+}
+
+.NavList{
+color: red;
+display: inline-block;
+/* float: left; */
+ list-style-type: none;
+  margin: 0;
+  padding-left: 20px;
+}
+
+.NavTopic{
+  color: red;
+   margin: 0;
+  padding-left: 18px;
+  padding-right: 18px;
+  background-color: rgba(88, 87, 87, 0.966)
+}
+
+.NavSelect{
+  color: red;
+  background-color: black;
+  /* font-size: 11px; */
+}
+
