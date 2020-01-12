@@ -3,8 +3,8 @@ import ArticleCard from './ArticleCard';
 
 function ArticleList(props) {
 
-  console.log(props, "from ArticleList")
-const {articles} = props
+  const {articles} = props
+  // console.log(props, "from ArticleList")
 
   return (
     <div>

@@ -9,7 +9,7 @@ function ArticleCard(props) {
   return (
     <div>
       <li>
-        <Link className="hypertext" to={`articles/${article_id}`}>
+        <Link className="hypertext" to={`/articles/${article_id}`}>
           <h3>{title}</h3>
           <label><b>Author: </b>{author}</label>
           <article>{body}</article>

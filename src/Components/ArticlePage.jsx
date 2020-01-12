@@ -17,11 +17,13 @@ class ArticlePage extends Component {
     return (
       <div>
         <h3>Article Page</h3>
-        <h2>{article.title} </h2>
-        <p>
-          <b>Author:</b> {article.author}
-        </p>
-        <p>{article.body}</p>
+        <article className="singleArticle">
+          <h2>{article.title} </h2>
+          <p>
+            <b>Author:</b> {article.author}
+          </p>
+          <p>{article.body}</p>
+        </article>
       </div>
     );
   }

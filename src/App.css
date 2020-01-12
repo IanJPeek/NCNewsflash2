@@ -89,3 +89,8 @@ display: inline-block;
   /* font-size: 11px; */
 }
 
+.singleArticle{
+  border: solid black 1px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
