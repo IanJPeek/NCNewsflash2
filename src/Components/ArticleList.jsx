@@ -10,7 +10,9 @@ function ArticleList(props) {
     <div>
       <ul>{articles.map(article => {
         return (
-        <ArticleCard className="ArticleCard" article={article} key={article.article_id}/>)
+        <ArticleCard className="ArticleCard" 
+        article={article} 
+        key={article.article_id}/>)
       }
         )}
       </ul>

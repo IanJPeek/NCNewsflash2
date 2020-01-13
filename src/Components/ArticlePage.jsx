@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import CommentSection from "./CommentSection";
 
 class ArticlePage extends Component {
   state = {
@@ -12,7 +13,8 @@ class ArticlePage extends Component {
   }
 
   render() {
-    const { article } = this.state;
+    const { article} = this.state;
+    const {article_id} = this.props
 
     return (
       <div>
@@ -24,6 +26,9 @@ class ArticlePage extends Component {
           </p>
           <p>{article.body}</p>
         </article>
+        <section>
+          <CommentSection article_id={article_id}/>
+        </section>
       </div>
     );
   }

@@ -90,6 +90,10 @@ display: inline-block;
 }
 
 .singleArticle{
+  
+}
+
+.commentCard {
   border: solid black 1px;
   border-radius: 10px;
   margin-bottom: 10px;

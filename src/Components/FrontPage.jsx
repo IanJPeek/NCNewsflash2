@@ -21,7 +21,6 @@ class FrontPage extends Component {
     return (
       <div>
         <h3>Our Top Stories</h3>
-
         <ArticleList articles={articles} />
       </div>
     );
