@@ -93,8 +93,16 @@ display: inline-block;
   
 }
 
-.commentCard {
+/* .commentCard {
   border: solid black 1px;
   border-radius: 10px;
   margin-bottom: 10px;
+} */
+
+.AddComment{
+  background-color: grey
+}
+
+.eraseCommentButton{
+  background-color: rgb(236, 138, 138)
 }

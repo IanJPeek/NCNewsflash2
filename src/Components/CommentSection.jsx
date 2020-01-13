@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from "axios"
 import CommentList from './CommentList';
+import AddComment from './AddComment';
 
 class CommentSection extends Component {
   state = {comments: [],
@@ -22,6 +23,7 @@ class CommentSection extends Component {
         <section>
         <CommentList comments={comments}/>
         </section>
+        <AddComment article_id={this.props.article_id}/>
       </div>
     );
   }

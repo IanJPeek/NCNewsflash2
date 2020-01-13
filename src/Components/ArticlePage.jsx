@@ -4,8 +4,8 @@ import CommentSection from "./CommentSection";
 
 class ArticlePage extends Component {
   state = {
-    article: {}
-    // isLoading: true
+    article: {},
+    isLoading: true
   };
 
   componentDidMount() {
@@ -39,7 +39,7 @@ class ArticlePage extends Component {
         `https://nc-news-ianp.herokuapp.com/api/articles/${this.props.article_id}`
       )
       .then(({ data }) => {
-        this.setState({ article: data.article });
+        this.setState({ article: data.article, isLoading: false });
       });
   };
 }
