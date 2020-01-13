@@ -4,7 +4,7 @@ import ArticleCard from './ArticleCard';
 function ArticleList(props) {
 
   const {articles} = props
-  // console.log(props, "from ArticleList")
+  console.log(props, "from ArticleList")
 
   return (
     <div>

@@ -4,7 +4,7 @@ import {Link} from "@reach/router"
 function ArticleCard(props) {
 
   const { article } = props;
-  const {title, body, author, article_id} = article;
+  const {title, body, author, article_id, comment_count, votes, created_at} = article;
 
   return (
     <div>
@@ -13,6 +13,10 @@ function ArticleCard(props) {
           <h3>{title}</h3>
           <label><b>Author: </b>{author}</label>
           <article>{body}</article>
+          <br></br>
+          <label><b>Comment count: </b>{comment_count}</label>
+          <label><b>Votes: </b>{votes}</label>
+          <label><b>Created: </b>{created_at}</label>
         </Link>
       </li>
     </div>
