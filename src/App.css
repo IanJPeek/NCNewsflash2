@@ -89,9 +89,9 @@ display: inline-block;
   /* font-size: 11px; */
 }
 
-.singleArticle{
+/* .singleArticle{
   
-}
+} */
 
 /* .commentCard {
   border: solid black 1px;
@@ -104,5 +104,17 @@ display: inline-block;
 }
 
 .eraseCommentButton{
-  background-color: rgb(236, 138, 138)
+  background-color: black;
+  font-size: 12px;
+  color: white
+}
+
+.upButton{
+background-color: rgb(153, 206, 153);
+border: solid black 1px;
+}
+
+.downButton{
+background-color: rgb(236, 138, 138);
+border: solid black 1px;
 }

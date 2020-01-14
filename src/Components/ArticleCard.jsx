@@ -15,7 +15,7 @@ function ArticleCard(props) {
           <article>{body}</article>
           <br></br>
           <label><b>Comment count: </b>{comment_count} &emsp;</label>
-          <label><b>Votes: </b>{votes} &emsp;</label>
+          {/* <label><b>Votes: </b>{votes} &emsp;</label> */}
           <label><b>Created: </b>{created_at}</label>
         </Link>
       </li>

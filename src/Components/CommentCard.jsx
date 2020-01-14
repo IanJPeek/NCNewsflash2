@@ -9,7 +9,7 @@ function CommentCard(props) {
     console.log(comment_id, "erase commentCard Id");
     axios.delete(
       `https://nc-news-ianp.herokuapp.com/api/comments/${comment_id}`
-    );
+    ).then(props.displayDeleted(comment_id))
   };
 
   return (
@@ -24,10 +24,15 @@ function CommentCard(props) {
           <b>User: </b>
           {author} &emsp;
         </label>
+        <br></br>
+        <button className="upButton">Vote Up!</button>
+        &emsp;
         <label>
           <b>Votes: </b>
           {votes}
         </label>
+        &emsp;
+        <button className="downButton">Vote Down!</button>
         <br></br>
         <button
           onClick={() => {

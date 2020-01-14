@@ -58,6 +58,7 @@ class AddComment extends Component {
       .then(({ data }) => {
         console.log(data, "addedComment");
         this.setState({ usernameInput: "jessjelly", commentInput: "" });
+        this.props.displayAdded(data)
       });
   };
 }

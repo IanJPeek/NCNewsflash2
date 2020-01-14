@@ -1,7 +1,23 @@
 import React from 'react';
 import {Link} from "@reach/router"
+import axios from "axios"
 
 function NavBar(props) {
+
+const filterBy = () => {
+
+const queryExample = "?=" +
+
+  axios
+    .get(
+      `https://nc-news-ianp.herokuapp.com/api/articles/${this.props.article_id}`
+    )
+    .then(({ data }) => {
+      this.setState({ article: data.article, isLoading: false });
+    });
+}
+
+
   return (
     <div className="NavBar">
       {/* <Link to="/">
@@ -36,6 +52,24 @@ function NavBar(props) {
               <b className="NavTopic">Football</b>
             </Link>
           </b>
+        </li>
+
+        <li className="NavList">
+        <b className="NavList">Filter by </b>
+          <span> </span>
+          <Link to="/?comment_count">
+            <b className="NavTopic">Comments</b>
+          </Link>
+
+          <Link to="/?created_at">
+            <b className="NavTopic">Created</b>
+          </Link>
+
+
+          {/* <select>
+            <option value="commentCount">Comment Count</option>
+            <option value="Football">Football</option>
+            </select> */}
         </li>
       </ul>
     </div>

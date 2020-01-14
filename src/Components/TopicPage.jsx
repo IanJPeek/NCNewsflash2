@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios'
 import ArticleList from './ArticleList';
 
-class FrontPage extends Component {
+class TopicPage extends Component {
   state = {
     articles: [],
     isLoading: true
@@ -12,25 +12,25 @@ class FrontPage extends Component {
     this.getArticles();
   }
 
-  componentDidUpdate(prevProps, prevState){
-    if (prevProps !== this.props) {this.getArticles()}
+  componentDidUpdate(prevProps, prevState) {
+    if (prevProps !== this.props) { this.getArticles() }
   }
-  
+
   render() {
     const { articles, isLoading } = this.state;
     if (isLoading) return <p>LOADING... Getting the latest News!</p>
-    
+
     return (
       <div>
-        <h3>Our Top Stories</h3>
+        <h3>All articles on {this.props.topic}</h3>
         <ArticleList articles={articles} />
       </div>
     );
   }
-  
-    getArticles = () => {
-      const { topic } = this.props;
-      return axios
+
+  getArticles = () => {
+    const { topic } = this.props;
+    return axios
       .get(`https://nc-news-ianp.herokuapp.com/api/articles`, {
         params: {
           topic: topic
@@ -41,7 +41,6 @@ class FrontPage extends Component {
       })
       .catch(err => console.dir(err));
   };
-
 }
 
-export default FrontPage;
+export default TopicPage;

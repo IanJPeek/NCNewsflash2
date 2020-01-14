@@ -12,7 +12,8 @@ function CommentList(props) {
             <CommentCard
               className="CommentCard"
               comment={comment}
-              key={comment.comment_id}
+              key={comment.comment_id} 
+              displayDeleted={props.displayDeleted}
             />
           );
         })}

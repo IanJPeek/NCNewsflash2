@@ -16,14 +16,17 @@ class CommentSection extends Component {
     const { comments, isLoading } = this.state;
     if (isLoading) return <p>LOADING... Retrieving comments!</p>
 
-
     return (
       <div>
         <h3>Your Comments</h3>
         <section>
-        <CommentList comments={comments}/>
+        <CommentList comments={comments}
+        displayDeleted={this.displayDeleted}/>
         </section>
-        <AddComment article_id={this.props.article_id}/>
+        <AddComment 
+        article_id={this.props.article_id}
+        displayAdded={this.displayAdded}
+        />
       </div>
     );
   }
@@ -36,6 +39,18 @@ return axios
   {this.setState({comments:data.comments, isLoading: false})} 
   )
 }
+
+  displayAdded = (newPost) => {
+    this.setState(currentState => {
+      return { comments: [ newPost.comment,...currentState.comments] }
+    })
+  }
+
+  displayDeleted = (deletedPost) => {
+    this.setState(currentState => {
+      return { comments: currentState.comments.filter(comment => comment.comment_id !== deletedPost) }
+    })
+  }
 
 }
 

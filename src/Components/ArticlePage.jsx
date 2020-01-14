@@ -14,17 +14,18 @@ class ArticlePage extends Component {
 
   render() {
     const { article} = this.state;
+    const {title, body, author} = article
     const {article_id} = this.props
 
     return (
       <div>
         <h3>Article Page</h3>
         <article className="singleArticle">
-          <h2>{article.title} </h2>
+          <h2>{title} </h2> <p>by {author}</p>
           <p>
-            <b>Author:</b> {article.author}
+            {/* <b>Author:</b> {article.author} */}
           </p>
-          <p>{article.body}</p>
+          <p>{body}</p>
         </article>
         <section>
           <CommentSection article_id={article_id}/>
