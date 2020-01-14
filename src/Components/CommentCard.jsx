@@ -7,10 +7,24 @@ function CommentCard(props) {
 
   const eraseComment = () => {
     console.log(comment_id, "erase commentCard Id");
-    axios.delete(
-      `https://nc-news-ianp.herokuapp.com/api/comments/${comment_id}`
-    ).then(props.displayDeleted(comment_id))
+    axios
+      .delete(`https://nc-news-ianp.herokuapp.com/api/comments/${comment_id}`)
+      .then(props.displayDeleted(comment_id));
   };
+
+  // const handleVote = (event) => {
+
+  const voteChange = (changeValue) => {
+
+  axios.patch(`https://nc-news-ianp.herokuapp.com/api/comments/${comment_id}`, { inc_votes: changeValue }
+  )
+  .then(({ data }) =>
+    console.log(data, "patched")
+  )
+
+  //displayVote(data)
+
+  }
 
   return (
     <div className="commentCard">
@@ -25,14 +39,26 @@ function CommentCard(props) {
           {author} &emsp;
         </label>
         <br></br>
-        <button className="upButton">Vote Up!</button>
+        <button
+          className="upButton"
+          onClick={() => voteChange(1)}
+          // displayVote
+        >
+          Vote Up!
+        </button>
         &emsp;
         <label>
           <b>Votes: </b>
           {votes}
         </label>
         &emsp;
-        <button className="downButton">Vote Down!</button>
+        <button
+          className="downButton"
+          onClick={() => voteChange(-1)}
+          // displayVote
+        >
+          Vote Down!
+        </button>
         <br></br>
         <button
           onClick={() => {

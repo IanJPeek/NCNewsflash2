@@ -9,11 +9,14 @@ class FrontPage extends Component {
   };
 
   componentDidMount() {
+    
     this.getArticles();
   }
 
   componentDidUpdate(prevProps, prevState){
-    if (prevProps !== this.props) {this.getArticles()}
+    if (prevProps !== this.props) 
+    {this.getArticles();
+    console.log(this.props, "sorted")}
   }
   
   render() {
@@ -29,11 +32,13 @@ class FrontPage extends Component {
   }
   
     getArticles = () => {
-      const { topic } = this.props;
+      const { topic, sortBy } = this.props;
+      // console.log(sortBy, "sort here")
       return axios
       .get(`https://nc-news-ianp.herokuapp.com/api/articles`, {
         params: {
-          topic: topic
+          topic: topic,
+          sortBy: sortBy
         }
       })
       .then(({ data }) => {

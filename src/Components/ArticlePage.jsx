@@ -19,7 +19,7 @@ class ArticlePage extends Component {
 
     return (
       <div>
-        <h3>Article Page</h3>
+        {/* <h3>Article Page</h3> */}
         <article className="singleArticle">
           <h2>{title} </h2> <p>by {author}</p>
           <p>

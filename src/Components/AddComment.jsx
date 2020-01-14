@@ -61,6 +61,9 @@ class AddComment extends Component {
         this.props.displayAdded(data)
       });
   };
+
+
+
 }
 
 export default AddComment;

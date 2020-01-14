@@ -4,18 +4,18 @@ import axios from "axios"
 
 function NavBar(props) {
 
-const filterBy = () => {
+// const filterBy = () => {
 
-const queryExample = "?=" +
+// const queryExample = "?=" +
 
-  axios
-    .get(
-      `https://nc-news-ianp.herokuapp.com/api/articles/${this.props.article_id}`
-    )
-    .then(({ data }) => {
-      this.setState({ article: data.article, isLoading: false });
-    });
-}
+//   axios
+//     .get(
+//       `https://nc-news-ianp.herokuapp.com/api/articles/${this.props.article_id}`
+//     )
+//     .then(({ data }) => {
+//       this.setState({ article: data.article, isLoading: false });
+//     });
+// }
 
 
   return (
@@ -33,7 +33,7 @@ const queryExample = "?=" +
       <ul className="NavList">
         <li className="NavList">
           <Link to="/">
-            <b className="NavList">Home</b>
+            <b className="NavList">HOME</b>
           </Link>
         </li>
         <li className="NavList">
@@ -55,16 +55,17 @@ const queryExample = "?=" +
         </li>
 
         <li className="NavList">
-        <b className="NavList">Filter by </b>
+        <b className="NavList">Order by: </b>
           <span> </span>
-          <Link to="/?comment_count">
-            <b className="NavTopic">Comments</b>
+          <Link to="/?sort_by=comment_count&order_by=desc">
+            <b className="NavTopic" 
+            // onClick={sortPass(category)}
+            >Comments</b>
           </Link>
 
-          <Link to="/?created_at">
+          <Link to="/?sort_by=created_at&order_by=desc">
             <b className="NavTopic">Created</b>
           </Link>
-
 
           {/* <select>
             <option value="commentCount">Comment Count</option>

@@ -17,7 +17,7 @@ function CommentList(props) {
             />
           );
         })}
-        )
+        
       </ul>
     </div>
   );
