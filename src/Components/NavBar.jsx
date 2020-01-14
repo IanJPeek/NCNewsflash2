@@ -6,8 +6,6 @@ function NavBar(props) {
 
 // const filterBy = () => {
 
-// const queryExample = "?=" +
-
 //   axios
 //     .get(
 //       `https://nc-news-ianp.herokuapp.com/api/articles/${this.props.article_id}`
@@ -57,15 +55,17 @@ function NavBar(props) {
         <li className="NavList">
         <b className="NavList">Order by: </b>
           <span> </span>
-          <Link to="/?sort_by=comment_count&order_by=desc">
+          {/* <Link to="/?sort_by=comment_count&order_by=desc"> */}
             <b className="NavTopic" 
-            // onClick={sortPass(category)}
+            onClick={() => {props.sortBy("?sort_by=comment_count")}}
             >Comments</b>
-          </Link>
+          {/* </Link> */}
 
-          <Link to="/?sort_by=created_at&order_by=desc">
-            <b className="NavTopic">Created</b>
-          </Link>
+          {/* <Link to="/?sort_by=created_at&order_by=desc"> */}
+            <b className="NavTopic"
+            onClick={() => { props.sortBy("?sort_by=created_at") }}
+            >Created</b>
+          {/* </Link> */}
 
           {/* <select>
             <option value="commentCount">Comment Count</option>

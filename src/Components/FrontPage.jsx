@@ -32,13 +32,12 @@ class FrontPage extends Component {
   }
   
     getArticles = () => {
-      const { topic, sortBy } = this.props;
-      // console.log(sortBy, "sort here")
+      const { topic, sort } = this.props;
+      console.log(sort, this.props, "sort here")
       return axios
-      .get(`https://nc-news-ianp.herokuapp.com/api/articles`, {
+        .get(`https://nc-news-ianp.herokuapp.com/api/articles${sort}`, {
         params: {
           topic: topic,
-          sortBy: sortBy
         }
       })
       .then(({ data }) => {
