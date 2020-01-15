@@ -6,11 +6,8 @@ import FrontPage from "./Components/FrontPage";
 import ArticlePage from "./Components/ArticlePage";
 import { Router } from "@reach/router";
 import NavBar from "./Components/NavBar";
-// import TopicPage from "./Components/TopicPage";
-
-
-
 import React, { Component } from 'react';
+import ErrorDisplay from "./ErrorDisplay";
 
 class App extends Component {
   state = {
@@ -39,6 +36,7 @@ class App extends Component {
             sort={this.state.sort}
           />
           <ArticlePage className="ArticlePage" path="/articles/:article_id" />
+          <ErrorDisplay default />
         </Router>
       </div>
     );
