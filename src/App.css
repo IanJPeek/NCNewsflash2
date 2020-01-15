@@ -51,15 +51,19 @@ li {
 
 .NavBar {
   height: 23px;
-  background-color: rgba(8, 8, 8, 0.938)
+  background-color: rgba(8, 8, 8, 0.938);
+  margin: 0px;
+  padding: 1px 0px 0px 0px;
 }
 
 .NavButton {
-  background-color: red;
-  border: solid white 1px;
-  font-size: 12px;
-  border-radius: 5px;
-  border-color: white
+	background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
 }
 
 .NavLabel {

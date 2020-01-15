@@ -50,11 +50,11 @@ class FrontPage extends Component {
         }
       })
       .then(({ data }) => {
-        this.setState({ articles: data.articles, isLoading: false });
+        this.setState({ articles: data.articles, isLoading: false, err: null });
       })
       .catch(err => {
         console.dir(err);
-        this.setState({ err: err });
+        this.setState({ err: err, isLoading: false });
       });
   };
 }

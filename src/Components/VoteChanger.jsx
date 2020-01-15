@@ -22,13 +22,17 @@ HandleVote = (changeValue) => {
     .then(({ data }) =>
       console.log(data, "patched")
     )
-
+.catch(err => {
+  this.setState({votedOn: false, voteDifference: 0, errMessage: true})
+})
 }
 
 render() {
   
   const {votes} = this.props
   const {votedOn, errMessage, voteDifference} = this.state
+
+if (errMessage) return <p>Your vote was not registered...</p>
 
     return (
       <div>

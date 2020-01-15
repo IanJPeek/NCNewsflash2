@@ -8,6 +8,7 @@ import { Router } from "@reach/router";
 import NavBar from "./Components/NavBar";
 import React, { Component } from 'react';
 import ErrorDisplay from "./ErrorDisplay";
+import SubNav from "./Components/SubNav";
 
 class App extends Component {
   state = {
@@ -26,6 +27,7 @@ class App extends Component {
     return (
       <div className="App">
         <NavBar className="NavBar" sortBy={this.sortBy} />
+        <SubNav className="NavBar" sortBy={this.sortBy} />
         <Header className="Header" />
         <SubHeader className="SubHeader" />
         <Router>

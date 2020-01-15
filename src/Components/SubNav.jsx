@@ -2,45 +2,44 @@ import React from 'react';
 
 function SubNav(props) {
   return (
-    <div>
-      <ul>
+    <div className="NavBar">
+      <ul className="NavBar">
         <li className="NavList">
           <b className="NavList">Order by: </b>
           <span> </span>
-          {/* <Link to="/?sort_by=comment_count&order_by=desc"> */}
-          <b
-            className="NavTopic"
-            onClick={() => {
-              props.sortBy("comment_count");
-            }}
-          >
-            Comments
-          </b>
-          {/* </Link> */}
 
-          {/* <Link to="/?sort_by=created_at&order_by=desc"> */}
-          <b
-            className="NavTopic"
-            onClick={() => {
-              props.sortBy("created_at");
-            }}
-          >
-            Created
-          </b>
-          {/* </Link> */}
+          <button className="NavButton">
+            <b
+              className="NavTopic"
+              onClick={() => {
+                props.sortBy("comment_count");
+              }}
+            >
+              Comments
+            </b>
+          </button>
 
-          {/* <select>
-            <option value="commentCount">Comment Count</option>
-            <option value="Football">Football</option>
-            </select> */}
-          <b
-            className="NavTopic"
-            onClick={() => {
-              props.sortBy("votes");
-            }}
-          >
-            Votes
-          </b>
+          <button className="NavButton">
+            <b
+              className="NavTopic"
+              onClick={() => {
+                props.sortBy("created_at");
+              }}
+            >
+              Created
+            </b>
+          </button>
+
+          <button className="NavButton">
+            <b
+              className="NavTopic"
+              onClick={() => {
+                props.sortBy("votes");
+              }}
+            >
+              Votes
+            </b>
+          </button>
         </li>
       </ul>
     </div>
