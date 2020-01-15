@@ -1,21 +1,9 @@
-import React from 'react';
-import {Link} from "@reach/router"
-import axios from "axios"
+import React from "react";
+import { Link } from "@reach/router";
+import axios from "axios";
 
 function NavBar(props) {
-
-// const filterBy = () => {
-
-//   axios
-//     .get(
-//       `https://nc-news-ianp.herokuapp.com/api/articles/${this.props.article_id}`
-//     )
-//     .then(({ data }) => {
-//       this.setState({ article: data.article, isLoading: false });
-//     });
-// }
-
-
+  
   return (
     <div className="NavBar">
       {/* <Link to="/">
@@ -53,24 +41,42 @@ function NavBar(props) {
         </li>
 
         <li className="NavList">
-        <b className="NavList">Order by: </b>
+          <b className="NavList">Order by: </b>
           <span> </span>
           {/* <Link to="/?sort_by=comment_count&order_by=desc"> */}
-            <b className="NavTopic" 
-            onClick={() => {props.sortBy("?sort_by=comment_count")}}
-            >Comments</b>
+          <b
+            className="NavTopic"
+            onClick={() => {
+              props.sortBy("comment_count");
+            }}
+          >
+            Comments
+          </b>
           {/* </Link> */}
 
           {/* <Link to="/?sort_by=created_at&order_by=desc"> */}
-            <b className="NavTopic"
-            onClick={() => { props.sortBy("?sort_by=created_at") }}
-            >Created</b>
+          <b
+            className="NavTopic"
+            onClick={() => {
+              props.sortBy("created_at");
+            }}
+          >
+            Created
+          </b>
           {/* </Link> */}
 
           {/* <select>
             <option value="commentCount">Comment Count</option>
             <option value="Football">Football</option>
             </select> */}
+          <b
+            className="NavTopic"
+            onClick={() => {
+              props.sortBy("votes");
+            }}
+          >
+            Votes
+          </b>
         </li>
       </ul>
     </div>

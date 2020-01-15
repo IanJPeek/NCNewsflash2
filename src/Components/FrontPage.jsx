@@ -9,14 +9,13 @@ class FrontPage extends Component {
   };
 
   componentDidMount() {
-    
     this.getArticles();
   }
 
   componentDidUpdate(prevProps, prevState){
     if (prevProps !== this.props) 
     {this.getArticles();
-    console.log(this.props, "sorted")}
+  }
   }
   
   render() {
@@ -32,20 +31,23 @@ class FrontPage extends Component {
   }
   
     getArticles = () => {
-      const { topic, sort } = this.props;
-      console.log(sort, this.props, "sort here")
+      
+      const {topic, sort, votes} = this.props  
+      
       return axios
-        .get(`https://nc-news-ianp.herokuapp.com/api/articles${sort}`, {
+      .get(`https://nc-news-ianp.herokuapp.com/api/articles`, { 
         params: {
           topic: topic,
+          sort_by: sort,
+          votes: votes
         }
       })
       .then(({ data }) => {
         this.setState({ articles: data.articles, isLoading: false });
       })
       .catch(err => console.dir(err));
-  };
-
-}
-
-export default FrontPage;
+    };
+    
+  }
+  
+  export default FrontPage;

@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from "@reach/router"
+import VoteChanger from './VoteChanger';
 
 function ArticleCard(props) {
 
@@ -15,9 +16,9 @@ function ArticleCard(props) {
           <article>{body}</article>
           <br></br>
           <label><b>Comment count: </b>{comment_count} &emsp;</label>
-          {/* <label><b>Votes: </b>{votes} &emsp;</label> */}
           <label><b>Created: </b>{created_at}</label>
         </Link>
+          <VoteChanger votes={votes} article_id={article_id}/>
       </li>
     </div>
   );

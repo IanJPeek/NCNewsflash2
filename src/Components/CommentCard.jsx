@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import VoteChanger from "./VoteChanger";
 
 function CommentCard(props) {
   const { comment } = props;
@@ -11,20 +12,6 @@ function CommentCard(props) {
       .delete(`https://nc-news-ianp.herokuapp.com/api/comments/${comment_id}`)
       .then(props.displayDeleted(comment_id));
   };
-
-  // const handleVote = (event) => {
-
-  const voteChange = (changeValue) => {
-
-  axios.patch(`https://nc-news-ianp.herokuapp.com/api/comments/${comment_id}`, { inc_votes: changeValue }
-  )
-  .then(({ data }) =>
-    console.log(data, "patched")
-  )
-
-  //displayVote(data)
-
-  }
 
   return (
     <div className="commentCard">
@@ -39,27 +26,7 @@ function CommentCard(props) {
           {author} &emsp;
         </label>
         <br></br>
-        <button
-          className="upButton"
-          onClick={() => voteChange(1)}
-          // displayVote
-        >
-          Vote Up!
-        </button>
-        &emsp;
-        <label>
-          <b>Votes: </b>
-          {votes}
-        </label>
-        &emsp;
-        <button
-          className="downButton"
-          onClick={() => voteChange(-1)}
-          // displayVote
-        >
-          Vote Down!
-        </button>
-        <br></br>
+        <VoteChanger votes={votes} comment_id={comment_id} />
         <button
           onClick={() => {
             eraseComment();
