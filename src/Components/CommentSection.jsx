@@ -52,14 +52,6 @@ return axios
     })
   }
 
-  displayVote = (votedComment) => {
-    const {comment_id} = votedComment.comment
-    this.setState(currentState => {
-      return { comments: [ , currentState.comments]}
-
-    })
-  }
-
 }
 
 export default CommentSection;
