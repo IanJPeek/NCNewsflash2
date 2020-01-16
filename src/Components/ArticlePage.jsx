@@ -31,7 +31,6 @@ class ArticlePage extends Component {
         <article className="singleArticle">
           <h2>{title} </h2> <p>by {author}</p>
           <p>
-            {/* <b>Author:</b> {article.author} */}
           </p>
           <p>{body}</p>
         </article>

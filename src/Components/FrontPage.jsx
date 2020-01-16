@@ -22,9 +22,9 @@ class FrontPage extends Component {
 
   render() {
     const { articles, isLoading, err } = this.state;
+    const {topic} =this.props
 
     if (err) return <p> <ErrorDisplay {...err}/>
-    
     {err.response.status}-
     {err.response.data.msg}</p>
 
@@ -32,7 +32,8 @@ class FrontPage extends Component {
 
     return (
       <div>
-        <h3>Our Top Stories</h3>
+        <h3>Our Top Stories {topic ? "- all " + topic[0].toUpperCase() + topic.slice(1) + " articles": null}</h3>
+        {/* <p>{topic}</p> */}
         <ArticleList articles={articles} />
       </div>
     );
