@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import axios from "axios";
+import { handlePost } from "./api";
 
 class AddComment extends Component {
   state = {
@@ -29,12 +29,13 @@ class AddComment extends Component {
             <input
               type="text"
               name="commentInput"
+              placeholder="What say you?"
               value={commentInput}
               onChange={this.handleChange}
             />
           </label>
           <br></br>
-          <button>Have My Say!</button>
+          <button disabled={commentInput.length === 0}>Have My Say!</button>
         </form>
       </div>
     );
@@ -47,23 +48,16 @@ class AddComment extends Component {
   };
 
   handleSubmit = event => {
-    const { article_id } = this.props;
     event.preventDefault();
+    const { article_id } = this.props;
     const { usernameInput, commentInput } = this.state;
-    axios
-      .post(
-        `https://nc-news-ianp.herokuapp.com/api/articles/${article_id}/comments`,
-        { username: usernameInput, body: commentInput }
-      )
-      .then(({ data }) => {
-        console.log(data, "addedComment");
-        this.setState({ usernameInput: "jessjelly", commentInput: "" });
-        this.props.displayAdded(data)
-      });
+
+    handlePost(article_id, usernameInput, commentInput).then(({ data }) => {
+      // console.log(data, "addedComment");
+      this.setState({ usernameInput: "jessjelly", commentInput: "" });
+      this.props.displayAdded(data);
+    });
   };
-
-
-
 }
 
 export default AddComment;

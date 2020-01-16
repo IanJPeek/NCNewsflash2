@@ -1,38 +1,34 @@
-import React, { Component } from 'react';
-import axios from "axios"
+import React, { Component } from "react";
+import { patchVote } from "./api";
 
 class VoteChanger extends Component {
+  state = {
+    votedOn: false,
+    errMessage: false,
+    voteDifference: 0
+  };
 
-state = {
-  votedOn: false,
-  errMessage: false,
-  voteDifference :0
-}
+  HandleVote = changeValue => {
 
-HandleVote = (changeValue) => {
-  const {comment_id, article_id } = this.props
+    this.setState({ votedOn: true, voteDifference: changeValue });
 
-  const request = comment_id ? "comments/" + comment_id : "articles/" + article_id;
+    const { comment_id, article_id } = this.props;
+    const request = comment_id
+      ? "comments/" + comment_id
+      : "articles/" + article_id;
 
-  this.setState({votedOn:true, voteDifference : changeValue
-  })
+    patchVote(request, changeValue)
+      // .then(({ data }) => console.log(data, "patched"))
+      .catch(err => {
+        this.setState({ votedOn: false, voteDifference: 0, errMessage: true });
+      });
+  };
 
-  axios.patch(`https://nc-news-ianp.herokuapp.com/api/${request}`, { inc_votes: changeValue }
-  )
-    .then(({ data }) =>
-      console.log(data, "patched")
-    )
-.catch(err => {
-  this.setState({votedOn: false, voteDifference: 0, errMessage: true})
-})
-}
+  render() {
+    const { votes } = this.props;
+    const { votedOn, errMessage, voteDifference } = this.state;
 
-render() {
-  
-  const {votes} = this.props
-  const {votedOn, errMessage, voteDifference} = this.state
-
-if (errMessage) return <p>Your vote was not registered...</p>
+    if (errMessage) return <p>Your vote was not registered...</p>;
 
     return (
       <div>
@@ -45,7 +41,7 @@ if (errMessage) return <p>Your vote was not registered...</p>
         </button>
         &emsp;
         <label>
-        <b>Votes: </b> {votedOn ? votes + voteDifference : votes}
+          <b>Votes: </b> {votedOn ? votes + voteDifference : votes}
         </label>
         &emsp;
         <button

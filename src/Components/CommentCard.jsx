@@ -1,16 +1,13 @@
 import React from "react";
-import axios from "axios";
 import VoteChanger from "./VoteChanger";
+import { handleDelete } from "./api";
 
 function CommentCard(props) {
   const { comment } = props;
   const { body, votes, comment_id, author } = comment;
 
   const eraseComment = () => {
-    console.log(comment_id, "erase commentCard Id");
-    axios
-      .delete(`https://nc-news-ianp.herokuapp.com/api/comments/${comment_id}`)
-      .then(props.displayDeleted(comment_id));
+    handleDelete(comment_id).then(props.displayDeleted(comment_id));
   };
 
   return (
