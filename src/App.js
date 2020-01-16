@@ -1,4 +1,3 @@
-// import React from "react";
 import "./App.css";
 import Header from "./Components/Header";
 import SubHeader from "./Components/SubHeader";
@@ -14,10 +13,6 @@ class App extends Component {
   state = {
     sort: ""
   };
-
-  // invoke function to put queries into state... (may need to reset to blank state after?)
-  // eg ?sort_by=comment_count
-  // eg ?sort_by=created_at
 
   sortBy = sortType => {
     this.setState({ sort: sortType });

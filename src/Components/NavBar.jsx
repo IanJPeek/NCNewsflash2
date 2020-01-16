@@ -3,17 +3,7 @@ import { Link } from "@reach/router";
 
 function NavBar(props) {
   return (
-    <div className="NavBar">
-      {/* <Link to="/">
-        <button className="NavButton">
-          <b>Home</b>
-        </button>
-      </Link>
-      <label className="NavLabel">Select Topic: </label>
-      <select>
-        <option value="Cooking">Cooking</option>
-        <option value="Football">Football</option>
-      </select> */}
+    <nav className="NavBar">
       <ul className="NavList">
         <li className="NavList">
           <Link to="/">
@@ -37,46 +27,8 @@ function NavBar(props) {
             </Link>
           </b>
         </li>
-
-        {/* <li className="NavList">
-          <b className="NavList">Order by: </b>
-          <span> </span>
-
-          <button className="NavButton">
-            <b
-              className="NavTopic"
-              onClick={() => {
-                props.sortBy("comment_count");
-              }}
-            >
-              Comments
-            </b>
-          </button>
-
-          <button className="NavButton">
-            <b
-              className="NavTopic"
-              onClick={() => {
-                props.sortBy("created_at");
-              }}
-            >
-              Created
-            </b>
-          </button>
-
-          <button className="NavButton">
-            <b
-              className="NavTopic"
-              onClick={() => {
-                props.sortBy("votes");
-              }}
-            >
-              Votes
-            </b>
-          </button>
-        </li> */}
       </ul>
-    </div>
+    </nav>
   );
 }
 

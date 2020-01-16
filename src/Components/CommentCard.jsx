@@ -3,15 +3,16 @@ import VoteChanger from "./VoteChanger";
 import { handleDelete } from "./api";
 
 function CommentCard(props) {
-  const { comment } = props;
+  const { comment, displayDeleted } = props;
   const { body, votes, comment_id, author } = comment;
 
   const eraseComment = () => {
-    handleDelete(comment_id).then(props.displayDeleted(comment_id));
+    handleDelete(comment_id).then(displayDeleted(comment_id)).catch(err => {
+      console.dir(err);
+    })
   };
 
   return (
-    <div className="commentCard">
       <li>
         <label>
           <b>Comment: </b>
@@ -33,7 +34,6 @@ function CommentCard(props) {
           Delete Comment
         </button>
       </li>
-    </div>
   );
 }
 

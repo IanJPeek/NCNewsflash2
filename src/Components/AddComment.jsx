@@ -11,8 +11,8 @@ class AddComment extends Component {
     const { usernameInput, commentInput } = this.state;
 
     return (
-      <div className="AddComment">
-        <form onSubmit={this.handleSubmit}>
+        <form className="AddComment" 
+        onSubmit={this.handleSubmit}>
           <label>
             <b>Username: </b>
             <input
@@ -37,7 +37,6 @@ class AddComment extends Component {
           <br></br>
           <button disabled={commentInput.length === 0}>Have My Say!</button>
         </form>
-      </div>
     );
   }
 

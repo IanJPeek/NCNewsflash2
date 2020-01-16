@@ -30,16 +30,14 @@ class ArticlePage extends Component {
     if (isLoading) return <p>Finding your article...</p>;
 
     return (
-      <div>
         <article className="singleArticle">
           <h2>{title} </h2> <p>by {author}</p>
           <p></p>
           <p>{body}</p>
-        </article>
         <section>
           <CommentSection article_id={article_id} />
         </section>
-      </div>
+        </article>
     );
   }
 

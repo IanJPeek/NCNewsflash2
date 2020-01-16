@@ -26,7 +26,6 @@ return dateString
   }
 
   return (
-    <div>
       <li>
         <Link className="hypertext" to={`/articles/${article_id}`}>
           <h3>{title}</h3>
@@ -40,7 +39,6 @@ return dateString
         </Link>
           <VoteChanger votes={votes} article_id={article_id}/>
       </li>
-    </div>
   );
 }
 

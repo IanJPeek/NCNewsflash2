@@ -15,7 +15,7 @@ class CommentSection extends Component {
     if (isLoading) return <p>LOADING... Retrieving comments!</p>;
 
     return (
-      <div>
+      <>
         <h3>Your Comments</h3>
         <section>
           <CommentList
@@ -27,7 +27,7 @@ class CommentSection extends Component {
           article_id={this.props.article_id}
           displayAdded={this.displayAdded}
         />
-      </div>
+      </>
     );
   }
 

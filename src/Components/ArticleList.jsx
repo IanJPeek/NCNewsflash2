@@ -7,7 +7,6 @@ function ArticleList(props) {
   console.log(props, "from ArticleList")
 
   return (
-    <div>
       <ul>{articles.map(article => {
         return (
         <ArticleCard className="ArticleCard" 
@@ -16,7 +15,6 @@ function ArticleList(props) {
       }
         )}
       </ul>
-    </div>
   );
 }
 
