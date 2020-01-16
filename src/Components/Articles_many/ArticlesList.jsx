@@ -1,10 +1,10 @@
 import React from 'react';
 import ArticleCard from './ArticleCard';
 
-function ArticleList(props) {
+function ArticlesList(props) {
 
   const {articles} = props
-  console.log(props, "from ArticleList")
+  console.log(props, "from ArticlesList")
 
   return (
       <ul>{articles.map(article => {
@@ -18,4 +18,4 @@ function ArticleList(props) {
   );
 }
 
-export default ArticleList;
+export default ArticlesList;

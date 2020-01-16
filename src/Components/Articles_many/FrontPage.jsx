@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import ArticleList from "./ArticleList";
-import ErrorDisplay from "../ErrorDisplay";
-import { getArticles } from "./api";
+import ArticlesList from "./ArticlesList";
+import ErrorDisplay from "../../ErrorDisplay";
+import { getArticles } from "../api";
 
 class FrontPage extends Component {
   state = {
@@ -67,31 +67,10 @@ class FrontPage extends Component {
             ? "- all " + topic[0].toUpperCase() + topic.slice(1) + " articles"
             : null}
         </h3>
-        {/* <p>{topic}</p> */}
-        <ArticleList articles={articles} />
+        <ArticlesList articles={articles} />
         </>
     );
   }
-
-  // getArticles = () => {
-  //   const { topic, sort, votes } = this.props;
-
-  //   return axios
-  //     .get(`https://nc-news-ianp.herokuapp.com/api/articles`, {
-  //       params: {
-  //         topic: topic,
-  //         sort_by: sort,
-  //         votes: votes
-  //       }
-  //     })
-  //     .then(({ data }) => {
-  //       this.setState({ articles: data.articles, isLoading: false, err: null });
-  //     })
-  //     .catch(err => {
-  //       console.dir(err);
-  //       this.setState({ err: err, isLoading: false });
-  //     });
-  // };
 }
 
 export default FrontPage;

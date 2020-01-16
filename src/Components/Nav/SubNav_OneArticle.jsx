@@ -1,14 +1,14 @@
 import React from 'react';
 
-function SubNav(props) {
+function SubNav_OneArticle(props) {
   return (
-    <div className="NavBar">
+    <nav className="NavBar">
       <ul className="NavBar">
         <li className="NavList">
           <b className="NavList">Order by: </b>
           <span> </span>
 
-          <button className="NavButton">
+          {/* <button className="NavButton">
             <b
               className="NavTopic"
               onClick={() => {
@@ -17,7 +17,7 @@ function SubNav(props) {
             >
               Comments
             </b>
-          </button>
+          </button> */}
 
           <button className="NavButton">
             <b
@@ -42,8 +42,8 @@ function SubNav(props) {
           </button>
         </li>
       </ul>
-    </div>
+    </nav>
   );
 }
 
-export default SubNav;
+export default SubNav_OneArticle;

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import CommentSection from "./CommentSection";
-import ErrorDisplay from "../ErrorDisplay";
-import { getOneArticle } from "./api";
+import ErrorDisplay from "../../ErrorDisplay";
+import { getOneArticle } from "../api";
 
 class ArticlePage extends Component {
   state = {

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { handlePost } from "./api";
+import { handlePost } from "../api";
 
 class AddComment extends Component {
   state = {

@@ -1,13 +1,13 @@
 import "./App.css";
-import Header from "./Components/Header";
-import SubHeader from "./Components/SubHeader";
-import FrontPage from "./Components/FrontPage";
-import ArticlePage from "./Components/ArticlePage";
+import Header from "./Components/Headers/Header";
+import SubHeader from "./Components/Headers/SubHeader";
+import FrontPage from "./Components/Articles_many/FrontPage";
+import ArticlePage from "./Components/Article_one/ArticlePage";
 import { Router } from "@reach/router";
-import NavBar from "./Components/NavBar";
+import NavBar from "./Components/Nav/NavBar";
 import React, { Component } from 'react';
 import ErrorDisplay from "./ErrorDisplay";
-import SubNav from "./Components/SubNav";
+import SubNav from "./Components/Nav/SubNav";
 
 class App extends Component {
   state = {

@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link} from "@reach/router"
-import VoteChanger from './VoteChanger';
+import VoteChanger from '../VoteChanger';
+
 
 function ArticleCard(props) {
 

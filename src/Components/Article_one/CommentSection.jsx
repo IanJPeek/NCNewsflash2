@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import CommentList from "./CommentList";
 import AddComment from "./AddComment";
-import { fetchComments } from "./api";
+import { fetchComments } from "../api";
 
 class CommentSection extends Component {
   state = { comments: [], isLoading: true };

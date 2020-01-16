@@ -1,6 +1,6 @@
 import React from "react";
-import VoteChanger from "./VoteChanger";
-import { handleDelete } from "./api";
+import VoteChanger from "../VoteChanger";
+import { handleDelete } from "../api";
 
 function CommentCard(props) {
   const { comment, displayDeleted } = props;
