@@ -42,7 +42,7 @@ return axios
 
   displayAdded = (newPost) => {
     this.setState(currentState => {
-      return { comments: [ newPost.comment,...currentState.comments] }
+      return { comments: [ ...currentState.comments, newPost.comment] }
     })
   }
 
