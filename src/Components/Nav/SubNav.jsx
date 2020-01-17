@@ -4,8 +4,12 @@ function SubNav(props) {
   return (
     <nav className="SubNav">
       <ul className="SubNav">
-        <li className="NavList">
-          <b className="NavList">Order by: </b>
+        <li 
+        // className="NavList"
+        >
+          <b 
+          // className="NavList"
+          >Order by: </b>
           <span> </span>
 
           <button className="NavButton">

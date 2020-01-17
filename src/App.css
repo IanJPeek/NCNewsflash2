@@ -58,6 +58,7 @@ li {
   background-color: rgba(8, 8, 8, 0.938);
   margin: 0px;
   padding: 1px 0px 0px 0px;
+  
 }
 
 .SubNav {
@@ -88,7 +89,7 @@ display: inline-block;
    margin: 0;
   padding-left: 18px;
   padding-right: 18px;
-  background-color: rgba(88, 87, 87, 0.966)
+  background-color: rgba(75, 74, 74, 0.986)
 }
 
 .NavButton {
@@ -152,7 +153,7 @@ display: inline-block;
 } */
 
 .AddComment{
-  background-color: grey
+  background-color: rgb(161, 159, 159)
 }
 
 .eraseCommentButton{
@@ -170,3 +171,24 @@ border: solid black 1px;
 background-color: rgb(236, 138, 138);
 border: solid black 1px;
 }
+
+.addCommentButton:disabled{
+  color: rgb(88, 86, 86);
+  background-color: rgb(250, 196, 196);
+  border: solid red 1px;
+  margin-bottom: 6px;
+}
+
+.addCommentButton{
+  margin-bottom: 6px;
+}
+
+ul {
+  /* margin-left: 0px; */
+  padding-inline-start: 6px;
+  padding-right: 6px;
+}
+
+/* .CommentList {
+  margin-left: 2px;
+} */

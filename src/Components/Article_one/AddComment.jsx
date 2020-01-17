@@ -35,7 +35,7 @@ class AddComment extends Component {
             />
           </label>
           <br></br>
-          <button disabled={commentInput.length === 0}>Have My Say!</button>
+          <button className="addCommentButton" disabled={commentInput.length === 0}>Have My Say!</button>
         </form>
     );
   }
