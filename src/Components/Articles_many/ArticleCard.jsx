@@ -1,62 +1,42 @@
-import React from 'react';
-import {Link} from "@reach/router"
-import VoteChanger from '../VoteChanger';
-
+import React from "react";
+import { Link } from "@reach/router";
+import VoteChanger from "../VoteChanger";
+import { textTrimmer } from "../utils";
+import { dateConverter } from "../utils";
 
 function ArticleCard(props) {
-
   const { article } = props;
-  const {title, body, author, article_id, comment_count, votes, created_at} = article;
-
-  function dateConverter() {
-    // console.log({created_at})
-    // const date = {created_at}
-    // const newDate = created_at.toDateString()
-    // console.log(date)
-    // const newDate = date.toDateString
-    // console.log(Date.parse(date))
-    const newDate = Date.parse(created_at)
-    console.log(newDate)
-    // console.log(new Date (newDate))
-    const displayDate = new Date(newDate)
-    const dateString = "" + displayDate
-    console.log (displayDate)
-    console.log(dateString)
-    // return displayDate
-return dateString
-  }
-
-  function textTrimmer() {
-
-const sentenceArray = body.split(".")
-    const twoSentence = sentenceArray[0] + "." + sentenceArray[1] + "..."
-
-    // console.log(body.split(".")[0] + "." + body.split(".")[1] + "...")
-    // body.split(".")[0] + "." + body.split(".")[1] + "..."
-
-if (sentenceArray.length> 1)
-    {return twoSentence}
-    else return (sentenceArray[0] + "...")
-  }
-
+  const {
+    title,
+    body,
+    author,
+    article_id,
+    comment_count,
+    votes,
+    created_at
+  } = article;
 
   return (
-      <li>
-        <Link className="hypertext" to={`/articles/${article_id}`}>
-          <h3>{title}</h3>
-          <label><b>Author: </b>{author}</label>
-        <article>
-        {/* {body.split(".")[0] + "." + body.split(".")[1] + "..."} */}
-          {textTrimmer()}
-          </article>
-          <br></br>
-          <label><b>Comment count: </b>{comment_count} &emsp;</label>
-          <label><b>Created: </b>{created_at}
-          {/* {dateConverter()} */}
-          </label>
-        </Link>
-          <VoteChanger votes={votes} article_id={article_id}/>
-      </li>
+    <li>
+      <Link className="hypertext" to={`/articles/${article_id}`}>
+        <h3>{title}</h3>
+        <label>
+          <b>Author: </b>
+          {author}
+        </label>
+        <article>{textTrimmer(body)}</article>
+        <br></br>
+        <label>
+          <b>Comment count: </b>
+          {comment_count} &emsp;
+        </label>
+        <label>
+          <b>Created: </b>
+          {dateConverter(created_at)}
+        </label>
+      </Link>
+      <VoteChanger votes={votes} article_id={article_id} />
+    </li>
   );
 }
 

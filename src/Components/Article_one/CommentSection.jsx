@@ -8,6 +8,7 @@ class CommentSection extends Component {
 
   componentDidMount() {
     this.getComments();
+    this.setState({isLoading:false})
   }
 
   render() {
@@ -17,6 +18,10 @@ class CommentSection extends Component {
     return (
       <>
         <h3>Your Comments</h3>
+
+{/* fix B.end to return empty array */}
+{(comments === undefined) && <p>Nothing yet?</p> }
+
         <section>
           <CommentList
             comments={comments}
