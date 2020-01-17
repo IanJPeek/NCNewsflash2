@@ -22,9 +22,11 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <NavBar className="NavBar" sortBy={this.sortBy} />
-        <SubNav className="SubNav" sortBy={this.sortBy} />
-        {/* <LoggedIn className="NavBar" id="LoggedIn" /> */}
+        <div classname="headWrapper">
+          <NavBar className="NavBar" sortBy={this.sortBy} />
+          <SubNav className="SubNav" sortBy={this.sortBy} />
+          <LoggedIn className="NavBar" id="LoggedIn" />
+        </div>
         <Header className="Header" />
         <SubHeader className="SubHeader" />
         <Router>

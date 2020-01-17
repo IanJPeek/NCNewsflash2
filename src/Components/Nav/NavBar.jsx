@@ -29,7 +29,7 @@ function NavBar(props) {
           </b>
         </li>
       </ul>
-      <LoggedIn/>
+      {/* <LoggedIn/> */}
     </nav>
   );
 }

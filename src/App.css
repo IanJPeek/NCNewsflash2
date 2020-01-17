@@ -21,7 +21,7 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white
+  color: white;
 }
 
 @keyframes App-logo-spin {
@@ -33,40 +33,46 @@
   }
 }
 
+h1{
+  padding-top: 8px;
+  padding-bottom: 4px;
+  margin-top: 0px;
+  border-bottom: solid black 2px;
+}
+
 li {
   list-style-type: none;
   border: solid black 1px;
   border-radius: 10px;
   margin-bottom: 10px;
-} 
+}
 
-.hypertext{
+.headWrapper{
+  display: grid;
+  grid-template-columns: 80% 20%;
+  grid-template-rows: 2;
+  grid-template-areas:  "NavBar Login"
+                        "SubNav Login";
+
+}
+
+.hypertext {
   /* color:black; */
   text-decoration: none;
   /* text-decoration-style: none; */
 }
 
-
 .NavBar {
   display: grid;
-  grid-template-columns: 80% 20%;
-  grid-template-rows: 2;
-  grid-template-areas:  "NavBar Login"
-                        "SubNav Login";
   grid-area: "NavBar";
-  height: 23px;
+  height: 46px;
   background-color: rgba(8, 8, 8, 0.938);
   margin: 0px;
   padding: 1px 0px 0px 0px;
-  
 }
 
 .SubNav {
   display: grid;
-  grid-template-columns: 80% 20%;
-  grid-template-rows: 2;
-  grid-template-areas:  "NavBar Login"
-                        "SubNav Login";
   grid-area: "SubNav";
   height: 23px;
   background-color: rgba(8, 8, 8, 0.938);
@@ -74,48 +80,48 @@ li {
   padding: 1px 0px 1px 0px;
 }
 
-.NavList{
-color: red;
-display: inline-block;
-/* float: left; */
- list-style-type: none;
+.NavList {
+  color: red;
+  display: inline-block;
+  /* float: left; */
+  list-style-type: none;
   margin: 0;
   padding: 1px 0px 1px 0px;
   /* padding-left: 20px; */
 }
 
-.NavTopic{
+.NavTopic {
   color: red;
-   margin: 0;
+  margin: 0;
   padding-left: 18px;
   padding-right: 18px;
-  background-color: rgba(75, 74, 74, 0.986)
+  background-color: rgba(75, 74, 74, 0.986);
 }
 
 .NavButton {
-	background: none;
-	color: inherit;
-	border: none;
-	padding: 0;
-	font: inherit;
-	cursor: pointer;
-	outline: inherit;
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
 }
 
-.LoggedIn{
-  display: grid;
+.LoggedIn {
+  /* display: grid; */
   /* grid-template-columns: 80% 20%;
   grid-template-rows: 2;
   grid-template-areas:  "NavBar Login"
                         "SubNav Login"; */
   grid-area: "Login";
   background-color: black;
-  width:fit-content;
+  width: fit-content;
   height: fit-content;
   /* height:16px; */
   /* padding-left: 2px; */
   border-left: solid red 2px;
-/* border-bottom: solid red 1px; */
+  /* border-bottom: solid red 1px; */
   /* border: dashed red 1px; */
   padding: 0px;
   margin: 0px;
@@ -128,13 +134,12 @@ display: inline-block;
 }
 
 #LoggedUser {
-  color: rgb(233, 103, 103)
+  color: rgb(233, 103, 103);
 }
 
 /* .NavLabel {
   color: red
 } */
-
 
 /* .NavSelect{
   color: red;
@@ -152,43 +157,48 @@ display: inline-block;
   margin-bottom: 10px;
 } */
 
-.AddComment{
-  background-color: rgb(161, 159, 159)
+.AddComment {
+  background-color: rgb(161, 159, 159);
 }
 
-.eraseCommentButton{
+.eraseCommentButton {
   background-color: black;
   font-size: 12px;
-  color: white
+  color: white;
 }
 
-.upButton{
-background-color: rgb(153, 206, 153);
-border: solid black 1px;
+.upButton {
+  background-color: rgb(153, 206, 153);
+  border: solid black 1px;
 }
 
-.downButton{
-background-color: rgb(236, 138, 138);
-border: solid black 1px;
+.downButton {
+  background-color: rgb(236, 138, 138);
+  border: solid black 1px;
 }
 
-.addCommentButton:disabled{
+.addCommentButton:disabled {
   color: rgb(88, 86, 86);
   background-color: rgb(250, 196, 196);
   border: solid red 1px;
   margin-bottom: 6px;
 }
 
-.addCommentButton{
+.addCommentButton {
   margin-bottom: 6px;
 }
 
 ul {
   /* margin-left: 0px; */
-  padding-inline-start: 6px;
-  padding-right: 6px;
+  padding-inline-start: 10px;
+  padding-right: 10px;
 }
 
 /* .CommentList {
   margin-left: 2px;
 } */
+
+@media only screen and (min-width: 650px) {.headWrapper {
+
+
+}}
