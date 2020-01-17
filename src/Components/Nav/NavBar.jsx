@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "@reach/router";
+import LoggedIn from "./LoggedIn";
 
 function NavBar(props) {
   return (
@@ -7,7 +8,7 @@ function NavBar(props) {
       <ul className="NavList">
         <li className="NavList">
           <Link to="/">
-            <b className="NavList">HOME</b>
+            <b className="NavList">HOME</b> &emsp;
           </Link>
         </li>
         <li className="NavList">
@@ -28,6 +29,7 @@ function NavBar(props) {
           </b>
         </li>
       </ul>
+      <LoggedIn/>
     </nav>
   );
 }

@@ -51,7 +51,7 @@ class VoteChanger extends Component {
         >
           Vote Down!
         </button>
-      </div>
+    </div>
     );
   }
 }

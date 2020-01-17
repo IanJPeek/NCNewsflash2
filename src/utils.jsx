@@ -2,7 +2,7 @@
 
 // function utils(created_at) {
 
-  export const dateConverter = (created_at) {
+  export const dateConverter = (created_at) => {
     // console.log({created_at})
     // const date = {created_at}
     // const newDate = created_at.toDateString()
@@ -20,12 +20,11 @@
     return dateString
   }
 
-
-  return (
-    <div>
+  // return (
+  //   <div>
       
-    </div>
-  );
+  //   </div>
+  // );
 // }
 
 // export default utils;

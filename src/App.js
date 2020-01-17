@@ -8,6 +8,7 @@ import NavBar from "./Components/Nav/NavBar";
 import React, { Component } from 'react';
 import ErrorDisplay from "./ErrorDisplay";
 import SubNav from "./Components/Nav/SubNav";
+import LoggedIn from "./Components/Nav/LoggedIn"
 
 class App extends Component {
   state = {
@@ -22,7 +23,8 @@ class App extends Component {
     return (
       <div className="App">
         <NavBar className="NavBar" sortBy={this.sortBy} />
-        <SubNav className="NavBar" sortBy={this.sortBy} />
+        <SubNav className="SubNav" sortBy={this.sortBy} />
+        {/* <LoggedIn className="NavBar" id="LoggedIn" /> */}
         <Header className="Header" />
         <SubHeader className="SubHeader" />
         <Router>

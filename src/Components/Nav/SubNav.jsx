@@ -2,8 +2,8 @@ import React from "react";
 
 function SubNav(props) {
   return (
-    <nav className="NavBar">
-      <ul className="NavBar">
+    <nav className="SubNav">
+      <ul className="SubNav">
         <li className="NavList">
           <b className="NavList">Order by: </b>
           <span> </span>
