@@ -41,7 +41,6 @@ class AddComment extends Component {
   }
 
   handleChange = event => {
-    // console.log(this.state, "in handleChange");
     const { name, value } = event.target;
     this.setState({ [name]: value });
   };
@@ -52,7 +51,6 @@ class AddComment extends Component {
     const { usernameInput, commentInput } = this.state;
 
     handlePost(article_id, usernameInput, commentInput).then(({ data }) => {
-      // console.log(data, "addedComment");
       this.setState({ usernameInput: "jessjelly", commentInput: "" });
       this.props.displayAdded(data);
     });

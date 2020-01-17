@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "@reach/router";
-import LoggedIn from "./LoggedIn";
+// import LoggedIn from "./LoggedIn";
 
 function NavBar(props) {
   return (
@@ -12,7 +12,7 @@ function NavBar(props) {
           </Link>
         </li>
         <li className="NavList">
-          <b className="NavList">Select Topic: </b>
+          <b className="NavList">Select Topic: </b> &ensp;
           <span> </span>
           <b>
             <Link to="/topics/coding">

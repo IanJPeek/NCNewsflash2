@@ -8,8 +8,8 @@ function SubNav(props) {
         // className="NavList"
         >
           <b 
-          // className="NavList"
-          >Order by: </b>
+          className="NavList"
+          >Order by: </b> &ensp;
           <span> </span>
 
           <button className="NavButton">
