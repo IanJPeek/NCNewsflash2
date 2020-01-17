@@ -20,7 +20,7 @@ class CommentSection extends Component {
         <h3>Your Comments</h3>
 
 {/* fix B.end to return empty array */}
-{(comments === undefined) && <p>Nothing yet?</p> }
+        {(comments.length === 0) && <p><em>Nothing!</em> Start the conversation?</p> }
 
         <section>
           <CommentList
