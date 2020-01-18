@@ -7,17 +7,19 @@ class ArticlePage extends Component {
   state = {
     article: {},
     isLoading: true,
-    err: null
+    err: null,
+    hideCommentSort: true
   };
 
   componentDidMount() {
     this.getArticle();
+    console.log(this.props, "article page props")
   }
 
   render() {
     const { article, isLoading, err } = this.state;
     const { title, body, author } = article;
-    const { article_id } = this.props;
+    const { article_id, sort} = this.props;
 
     if (err)
       return (
@@ -35,7 +37,7 @@ class ArticlePage extends Component {
           <p></p>
           <p>{body}</p>
         <section>
-          <CommentSection article_id={article_id} />
+          <CommentSection article_id={article_id} sort={sort} />
         </section>
         </article>
     );

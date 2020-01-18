@@ -36,7 +36,8 @@ class App extends Component {
             path="/topics/:topic"
             sort={this.state.sort}
           />
-          <ArticlePage className="ArticlePage" path="/articles/:article_id" />
+          <ArticlePage className="ArticlePage" path="/articles/:article_id" 
+          sort={this.state.sort}/>
           <ErrorDisplay default />
         </Router>
       </div>

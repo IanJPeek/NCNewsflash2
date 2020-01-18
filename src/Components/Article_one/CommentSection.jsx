@@ -8,7 +8,8 @@ class CommentSection extends Component {
 
   componentDidMount() {
     this.getComments();
-    this.setState({isLoading:false})
+    this.setState({ isLoading: false });
+    console.log(this.props, "comment props");
   }
 
   render() {
@@ -19,8 +20,12 @@ class CommentSection extends Component {
       <>
         <h3>Your Comments</h3>
 
-{/* fix B.end to return empty array */}
-        {(comments.length === 0) && <p><em>Nothing!</em> Start the conversation?</p> }
+        {/* fix B.end to return empty array */}
+        {comments.length === 0 && (
+          <p>
+            <em>Nothing!</em> Start the conversation?
+          </p>
+        )}
 
         <section>
           <CommentList
@@ -37,12 +42,23 @@ class CommentSection extends Component {
   }
 
   getComments = () => {
-    const { article_id } = this.props;
+    const { article_id, sort } = this.props;
+    console.log(sort, "sort + getting comment");
 
-    fetchComments(article_id).then(({ data }) => {
+    fetchComments(article_id, sort).then(({ data }) => {
       this.setState({ comments: data.comments, isLoading: false });
     });
   };
+
+  componentDidUpdate(prevProps, prevState) {
+    const { article_id, sort, votes } = this.props;
+    console.log(sort, "sort + updating comment");
+    if (prevProps !== this.props) {
+      fetchComments(article_id, sort, votes).then(({ data }) => {
+        this.setState({ comments: data.comments, isLoading: false });
+      });
+    }
+  }
 
   displayAdded = newPost => {
     this.setState(currentState => {

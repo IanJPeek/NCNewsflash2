@@ -10,7 +10,7 @@ class VoteChanger extends Component {
 
   HandleVote = changeValue => {
 
-    this.setState({ votedOn: true, voteDifference: changeValue });
+    this.setState({ votedOn: true, voteDifference: this.state.voteDifference + changeValue });
 
     const { comment_id, article_id } = this.props;
     const request = comment_id
@@ -35,7 +35,7 @@ class VoteChanger extends Component {
         <button
           className="upButton"
           onClick={() => this.HandleVote(1)}
-          disabled={votedOn}
+          disabled={voteDifference===1}
         >
           Vote Up!
         </button>
@@ -47,7 +47,7 @@ class VoteChanger extends Component {
         <button
           className="downButton"
           onClick={() => this.HandleVote(-1)}
-          disabled={votedOn}
+          disabled={voteDifference === -1}
         >
           Vote Down!
         </button>

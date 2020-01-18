@@ -16,9 +16,15 @@ export const getOneArticle = (article_id) => {
   );
 }
 
-export const fetchComments = (article_id) => {
+export const fetchComments = (article_id, sort, votes) => {console.log("fetching comments", sort)
   return axios.get(
-    `https://nc-news-ianp.herokuapp.com/api/articles/${article_id}/comments`
+    `https://nc-news-ianp.herokuapp.com/api/articles/${article_id}/comments`,
+    {
+      params: {
+        sort_by: sort,
+        votes: votes
+      }
+    }
   );
 }
 

@@ -18,6 +18,7 @@ function SubNav(props) {
               onClick={() => {
                 props.sortBy("comment_count");
               }}
+              // hidden={hideCommentSort}
             >
               Comments
             </b>
@@ -26,7 +27,7 @@ function SubNav(props) {
           <button className="NavButton">
             <b
               className="NavTopic"
-              onClick={() => {
+              onClick={() => {console.log("sort created")
                 props.sortBy("created_at");
               }}
             >
@@ -37,7 +38,7 @@ function SubNav(props) {
           <button className="NavButton">
             <b
               className="NavTopic"
-              onClick={() => {
+              onClick={() => {console.log("sort votes")
                 props.sortBy("votes");
               }}
             >
