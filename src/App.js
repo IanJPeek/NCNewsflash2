@@ -12,32 +12,57 @@ import LoggedIn from "./Components/Nav/LoggedIn"
 
 class App extends Component {
   state = {
-    sort: ""
+    sort: "",
+    hideCommentSort: false
   };
 
   sortBy = sortType => {
     this.setState({ sort: sortType });
   };
 
+  noComment = () => {
+    this.setState({ hideCommentSort: true });
+  };
+
+  showComment = () => {
+    this.setState({ hideCommentSort: false });
+  };
+
   render() {
+    const { sort, hideCommentSort } = this.state;
+
     return (
       <div className="App">
         <div classname="headWrapper">
           <NavBar className="NavBar" sortBy={this.sortBy} />
-          <SubNav className="SubNav" sortBy={this.sortBy} />
+          <SubNav
+            className="SubNav"
+            sortBy={this.sortBy}
+            hideCommentSort={hideCommentSort}
+          />
           <LoggedIn className="NavBar" id="LoggedIn" />
         </div>
         <Header className="Header" />
         <SubHeader className="SubHeader" />
         <Router>
-          <FrontPage className="FrontPage" path="/" sort={this.state.sort} />
+          <FrontPage
+            className="FrontPage"
+            path="/"
+            sort={sort}
+            showComment={this.showComment}
+          />
           <FrontPage
             className="TopicPage"
             path="/topics/:topic"
-            sort={this.state.sort}
+            sort={sort}
+            showComment={this.showComment}
           />
-          <ArticlePage className="ArticlePage" path="/articles/:article_id" 
-          sort={this.state.sort}/>
+          <ArticlePage
+            className="ArticlePage"
+            path="/articles/:article_id"
+            sort={sort}
+            noComment={this.noComment}
+          />
           <ErrorDisplay default />
         </Router>
       </div>

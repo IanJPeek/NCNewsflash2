@@ -9,7 +9,6 @@ class CommentSection extends Component {
   componentDidMount() {
     this.getComments();
     this.setState({ isLoading: false });
-    console.log(this.props, "comment props");
   }
 
   render() {
@@ -18,7 +17,7 @@ class CommentSection extends Component {
 
     return (
       <>
-        <h3>Your Comments</h3>
+        <h3 className="CommentsHeader">Your Comments</h3>
 
         {/* fix B.end to return empty array */}
         {comments.length === 0 && (
@@ -43,8 +42,6 @@ class CommentSection extends Component {
 
   getComments = () => {
     const { article_id, sort } = this.props;
-    console.log(sort, "sort + getting comment");
-
     fetchComments(article_id, sort).then(({ data }) => {
       this.setState({ comments: data.comments, isLoading: false });
     });
@@ -52,7 +49,6 @@ class CommentSection extends Component {
 
   componentDidUpdate(prevProps, prevState) {
     const { article_id, sort, votes } = this.props;
-    console.log(sort, "sort + updating comment");
     if (prevProps !== this.props) {
       fetchComments(article_id, sort, votes).then(({ data }) => {
         this.setState({ comments: data.comments, isLoading: false });

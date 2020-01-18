@@ -2,7 +2,7 @@ import React from 'react';
 
 function Header(props) {
   return (
-      <h1>NC News</h1>
+      <h1 className="Header">NC News</h1>
   );
 }
 

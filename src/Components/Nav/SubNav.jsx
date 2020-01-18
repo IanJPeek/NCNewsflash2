@@ -1,54 +1,66 @@
-import React from "react";
+import React, { Component } from "react";
 
-function SubNav(props) {
-  return (
-    <nav className="SubNav">
-      <ul className="SubNav">
-        <li 
-        // className="NavList"
-        >
-          <b 
-          className="NavList"
-          >Order by: </b> &ensp;
-          <span> </span>
+class SubNav extends Component {
+  state = {
+    hideCommentSort: false
+  };
 
-          <button className="NavButton">
-            <b
-              className="NavTopic"
-              onClick={() => {
-                props.sortBy("comment_count");
-              }}
-              // hidden={hideCommentSort}
-            >
-              Comments
-            </b>
-          </button>
+// noComment = () => {
+//   this.setState({hideCommentSort: true})
+// }
 
-          <button className="NavButton">
-            <b
-              className="NavTopic"
-              onClick={() => {console.log("sort created")
-                props.sortBy("created_at");
-              }}
-            >
-              Created
-            </b>
-          </button>
+//   showComment = () => {
+//     this.setState({ hideCommentSort: false })
+//   }
 
-          <button className="NavButton">
-            <b
-              className="NavTopic"
-              onClick={() => {console.log("sort votes")
-                props.sortBy("votes");
-              }}
-            >
-              Votes
-            </b>
-          </button>
-        </li>
-      </ul>
-    </nav>
-  );
+  render() {
+const {sortBy, hideCommentSort} =this.props
+// const {hideCommentSort} = this.state
+
+    return (
+      <nav className="SubNav">
+        <ul className="SubNav">
+          <li
+          // className="NavList"
+          >
+            <b className="NavList">Order by: </b> &ensp;
+            <span> </span>
+            <button className="NavButton">
+              <b
+                className="NavTopic"
+                onClick={() => {
+                  sortBy("comment_count");
+                }}
+                hidden={hideCommentSort}
+              >
+                Comments
+              </b>
+            </button>
+            <button className="NavButton">
+              <b
+                className="NavTopic"
+                onClick={() => {
+                  sortBy("created_at");
+                }}
+              >
+                Created
+              </b>
+            </button>
+            <button className="NavButton">
+              <b
+                className="NavTopic"
+                onClick={() => {
+                  sortBy("votes");
+                }}
+              >
+                Votes
+              </b>
+            </button>
+          </li>
+        </ul>
+      </nav>
+    );
+  }
 }
 
 export default SubNav;

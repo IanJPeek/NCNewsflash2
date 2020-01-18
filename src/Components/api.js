@@ -16,7 +16,7 @@ export const getOneArticle = (article_id) => {
   );
 }
 
-export const fetchComments = (article_id, sort, votes) => {console.log("fetching comments", sort)
+export const fetchComments = (article_id, sort, votes) => {
   return axios.get(
     `https://nc-news-ianp.herokuapp.com/api/articles/${article_id}/comments`,
     {

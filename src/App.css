@@ -33,11 +33,24 @@
   }
 }
 
-h1{
+.Header{
+  margin-top: 0px;
+  margin-bottom: 10px;
+  border-bottom: solid black 2px;
   padding-top: 8px;
   padding-bottom: 4px;
-  margin-top: 0px;
+}
+
+.SubHeader {
+  margin-top: 4px;
   border-bottom: solid black 2px;
+  /* padding-top: 8px; */
+  padding-bottom: 8px;
+}
+
+.CommentsHeader {
+  border-bottom: solid black 1px;
+  padding-bottom: 8px;
 }
 
 li {
@@ -95,7 +108,7 @@ li {
   margin: 0;
   padding-left: 18px;
   padding-right: 18px;
-  background-color: rgba(75, 74, 74, 0.986);
+  background-color: rgba(75, 74, 74, 0.65);
 }
 
 .NavButton {
@@ -180,13 +193,15 @@ li {
 
 .addCommentButton:disabled {
   color: rgb(88, 86, 86);
-  background-color: rgb(250, 196, 196);
-  border: solid red 1px;
+  background-color:rgb(153, 206, 153);
+  border: solid black 1px;
   margin-bottom: 6px;
 }
 
 .addCommentButton {
   margin-bottom: 6px;
+  background-color:rgb(153, 206, 153);
+  border: solid black 1px;
 }
 
 ul {

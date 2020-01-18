@@ -12,8 +12,9 @@ class ArticlePage extends Component {
   };
 
   componentDidMount() {
+    const {noComment} = this.props
+    noComment()
     this.getArticle();
-    console.log(this.props, "article page props")
   }
 
   render() {

@@ -11,8 +11,8 @@ class FrontPage extends Component {
   };
 
   componentDidMount() {
-    const { topic, sort, votes } = this.props;
-    console.log(sort, "mounted sort")
+    const { topic, sort, votes, showComment } = this.props;
+    showComment()
     getArticles(topic, sort, votes)
       .then(({ data }) => {
         this.setState({
@@ -29,7 +29,6 @@ class FrontPage extends Component {
 
   componentDidUpdate(prevProps, prevState) {
     const { topic, sort, votes } = this.props;
-    console.log(sort, "updated sort")
     if (prevProps !== this.props) {
       getArticles(topic, sort, votes)
         .then(({ data }) => {
