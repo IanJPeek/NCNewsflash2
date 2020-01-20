@@ -3,6 +3,7 @@ import ErrorDisplay from "../../ErrorDisplay";
 import { getArticles } from "../api";
 import ArticlesList from "./ArticlesList";
 
+
 class FrontPage extends Component {
   state = {
     articles: [],
@@ -68,7 +69,6 @@ class FrontPage extends Component {
             : null}
         </h3>
         <ArticlesList articles={articles} />
-        
         </main>
     );
   }
