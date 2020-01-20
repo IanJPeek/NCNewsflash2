@@ -4,7 +4,6 @@ import ArticleCard from './ArticleCard';
 function ArticlesList(props) {
 
   const {articles} = props
-  console.log(props, "from ArticlesList")
 
   return (
       <ul>{articles.map(article => {

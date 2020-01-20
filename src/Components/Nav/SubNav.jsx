@@ -1,28 +1,11 @@
-import React, { Component } from "react";
+import React from 'react';
 
-class SubNav extends Component {
-  state = {
-    hideCommentSort: false
-  };
-
-// noComment = () => {
-//   this.setState({hideCommentSort: true})
-// }
-
-//   showComment = () => {
-//     this.setState({ hideCommentSort: false })
-//   }
-
-  render() {
-const {sortBy, hideCommentSort} =this.props
-// const {hideCommentSort} = this.state
-
-    return (
+function SubNav(props) {
+  const {sortBy, hideCommentSort} = props
+  return (
       <nav className="SubNav">
         <ul className="SubNav">
-          <li
-          // className="NavList"
-          >
+          <li>
             <b className="NavList">Order by: </b> &ensp;
             <span> </span>
             <button className="NavButton">
@@ -59,8 +42,7 @@ const {sortBy, hideCommentSort} =this.props
           </li>
         </ul>
       </nav>
-    );
-  }
+  );
 }
 
 export default SubNav;
