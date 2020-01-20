@@ -11,7 +11,6 @@ const ErrorDisplay = (err) => {
       <p>Uh-oh - try something else!</p>
       <p>{status}-{msg}</p>
       <img className="errorSad" src={errorSad} alt="A weeping figure" />
-      
     </>
   );
 };

@@ -3,7 +3,6 @@ import ErrorDisplay from "../../ErrorDisplay";
 import { getArticles } from "../api";
 import ArticlesList from "./ArticlesList";
 
-
 class FrontPage extends Component {
   state = {
     articles: [],
