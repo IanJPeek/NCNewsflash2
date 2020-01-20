@@ -31,7 +31,7 @@ class VoteChanger extends Component {
     if (errMessage) return <p>Your vote was not registered...</p>;
 
     return (
-      <div>
+      <div className="VoteChanger">
         <button
           className="upButton"
           onClick={() => this.HandleVote(1)}

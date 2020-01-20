@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "@reach/router";
-// import LoggedIn from "./LoggedIn";
 
 function NavBar(props) {
   return (
@@ -29,7 +28,6 @@ function NavBar(props) {
           </b>
         </li>
       </ul>
-      {/* <LoggedIn/> */}
     </nav>
   );
 }

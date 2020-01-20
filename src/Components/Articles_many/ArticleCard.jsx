@@ -19,11 +19,7 @@ function ArticleCard(props) {
   return (
     <li>
       <Link className="hypertext" to={`/articles/${article_id}`}>
-        <h3>{title}</h3>
-        <label>
-          <b>Author: </b>
-          {author}
-        </label>
+        <h3>{title} <span className="notBold">by <em>{author}</em></span></h3>
         <article>{textTrimmer(body)}</article>
         <br></br>
         <label>

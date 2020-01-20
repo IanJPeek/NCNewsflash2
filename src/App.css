@@ -33,19 +33,31 @@
   }
 }
 
+a {
+  text-decoration: none;
+}
+
 .Header{
   margin-top: 0px;
-  margin-bottom: 10px;
-  border-bottom: solid black 2px;
+  margin-bottom: 0px;
+  /* border-bottom: solid red 2px; */
   padding-top: 8px;
   padding-bottom: 4px;
+  /* color: black;
+  background-color: rgba(255, 0, 0, 0.883); */
+  /* background-image: url("./images/Yellowed.jpeg"); */
+  /* text-decoration: none; */
 }
 
 .SubHeader {
-  margin-top: 4px;
+  margin-top: 0px;
+  border-top: solid black 2px;
   border-bottom: solid black 2px;
-  /* padding-top: 8px; */
+  padding-top: 8px;
   padding-bottom: 8px;
+  /* background-color:black;
+  color: red */
+  /* background-image: url("./images/Yellowed.jpeg"); */
 }
 
 .CommentsHeader {
@@ -55,6 +67,7 @@
 
 li {
   list-style-type: none;
+  /* color: black; */
   border: solid black 1px;
   border-radius: 10px;
   margin-bottom: 10px;
@@ -70,7 +83,7 @@ li {
 }
 
 .hypertext {
-  /* color:black; */
+  color:black;
   text-decoration: none;
   /* text-decoration-style: none; */
 }
@@ -162,14 +175,31 @@ li {
 } */
 
 /* .singleArticle{
-  
+  background-image: url("./images/Yellowed.jpeg");
 } */
+
+.notBold {
+  font-weight: normal
+}
+
+article{
+ margin: 0px 5px;
+}
+
+main{
+  /* background-image: url("./images/Yellowed.jpeg");
+  opacity: 0.8; */
+}
 
 /* .commentCard {
   border: solid black 1px;
   border-radius: 10px;
   margin-bottom: 10px;
 } */
+
+.VoteChanger {
+  padding: 5px 0px;
+}
 
 .AddComment {
   background-color: rgb(161, 159, 159);
@@ -208,6 +238,7 @@ ul {
   /* margin-left: 0px; */
   padding-inline-start: 10px;
   padding-right: 10px;
+  /* color: black; */
 }
 
 /* .CommentList {

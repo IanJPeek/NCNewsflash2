@@ -34,9 +34,10 @@ class ArticlePage extends Component {
 
     return (
         <article className="singleArticle">
-          <h2>{title} </h2> <p>by {author}</p>
-          <p></p>
-          <p>{body}</p>
+          <h2>{title} </h2> 
+          
+        <p>by <em>{author}</em></p>
+          <main>{body}</main>
         <section>
           <CommentSection article_id={article_id} sort={sort} />
         </section>

@@ -61,7 +61,7 @@ class FrontPage extends Component {
     if (isLoading) return <p>LOADING... Getting the latest News!</p>;
 
     return (
-        <>
+        <main>
         <h3>
           Our Top Stories{" "}
           {topic
@@ -70,7 +70,7 @@ class FrontPage extends Component {
         </h3>
         <ArticlesList articles={articles} />
         
-        </>
+        </main>
     );
   }
 }
