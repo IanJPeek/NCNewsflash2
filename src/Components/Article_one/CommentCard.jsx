@@ -4,19 +4,34 @@ import { handleDelete } from "../api";
 import { dateConverter } from "../utils";
 
 function CommentCard(props) {
-  const { comment, displayDeleted } = props;
+  const { comment, displayDeleted, lookUpId } = props;
   const { body, votes, comment_id, author,created_at } = comment;
 
   const eraseComment = () => {
     if (author === "jessjelly"){
-    handleDelete(comment_id).then(displayDeleted(comment_id)).catch(err => {
+    handleDelete(comment_id)
+    .then(displayDeleted(comment_id))
+    .catch(err => {
       console.dir(err);
     })}
     else{alert("You can only delete your OWN comments!")}
   };
 
+  const GetIdClass = () => {
+
+    let id = "grey"
+    let newId = true;
+
+    if (lookUpId % 2 === 0) { newId = false }
+    newId === true ? id = "grey" : id = "red";
+
+    return id
+  }
+
   return (
-      <li>
+      <li
+      id={"red" ? GetIdClass() : "grey"}
+      >
         <label>
           <b>Comment: </b>
           {body}

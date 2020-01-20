@@ -52,7 +52,6 @@ class FrontPage extends Component {
     if (err)
       return (
         <p>
-          {" "}
           <ErrorDisplay {...err} />
         </p>
       );

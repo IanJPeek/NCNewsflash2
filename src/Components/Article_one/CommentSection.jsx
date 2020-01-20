@@ -4,7 +4,8 @@ import AddComment from "./AddComment";
 import { fetchComments } from "../api";
 
 class CommentSection extends Component {
-  state = { comments: [], isLoading: true };
+  state = { comments: [], 
+            isLoading: true };
 
   componentDidMount() {
     this.getComments();
@@ -19,7 +20,6 @@ class CommentSection extends Component {
       <>
         <h3 className="CommentsHeader">Your Comments</h3>
 
-        {/* fix B.end to return empty array */}
         {comments.length === 0 && (
           <p>
             <em>Nothing!</em> Start the conversation?

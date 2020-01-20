@@ -4,6 +4,8 @@ import CommentCard from "./CommentCard";
 function CommentList(props) {
   const { comments, displayDeleted } = props;
 
+  const arrayID = comments.map(comment => comment.comment_id)
+
   return (
     <ul>
       {comments.map(comment => {
@@ -13,6 +15,7 @@ function CommentList(props) {
             comment={comment}
             key={comment.comment_id}
             displayDeleted={displayDeleted}
+            lookUpId={arrayID.indexOf(comment.comment_id)}
           />
         );
       })}
