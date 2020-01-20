@@ -13,7 +13,9 @@ import LoggedIn from "./Components/Nav/LoggedIn"
 class App extends Component {
   state = {
     sort: "",
-    hideCommentSort: false
+    hideCommentSort: false,
+    err: {response: {status:404,
+    data: {msg: "Bad request - that didn't work"}}}
   };
 
   sortBy = sortType => {
@@ -29,7 +31,7 @@ class App extends Component {
   };
 
   render() {
-    const { sort, hideCommentSort } = this.state;
+    const { sort, hideCommentSort, err } = this.state;
 
     return (
       <div className="App">
@@ -63,7 +65,7 @@ class App extends Component {
             sort={sort}
             noComment={this.noComment}
           />
-          <ErrorDisplay default />
+          <ErrorDisplay default {...err}/>
         </Router>
       </div>
     );

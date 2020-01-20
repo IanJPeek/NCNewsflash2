@@ -25,9 +25,7 @@ class ArticlePage extends Component {
     if (err)
       return (
         <p>
-          {" "}
           <ErrorDisplay {...err} />
-          {err.response.status}-{err.response.data.msg}
         </p>
       );
     if (isLoading) return <p>Finding your article...</p>;

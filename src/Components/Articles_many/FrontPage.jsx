@@ -54,7 +54,6 @@ class FrontPage extends Component {
         <p>
           {" "}
           <ErrorDisplay {...err} />
-          {err.response.status}-{err.response.data.msg}
         </p>
       );
 
