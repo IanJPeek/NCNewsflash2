@@ -2,6 +2,7 @@ import React from "react";
 import VoteChanger from "../VoteChanger";
 import { handleDelete } from "../api";
 import { dateConverter } from "../utils";
+import { GetIdClass } from "../utils";
 
 function CommentCard(props) {
   const { comment, displayDeleted, lookUpId } = props;
@@ -17,20 +18,9 @@ function CommentCard(props) {
     else{alert("You can only delete your OWN comments!")}
   };
 
-  const GetIdClass = () => {
-
-    let id = "grey"
-    let newId = true;
-
-    if (lookUpId % 2 === 0) { newId = false }
-    newId === true ? id = "grey" : id = "red";
-
-    return id
-  }
-
   return (
       <li
-      id={"red" ? GetIdClass() : "grey"}
+      id={"red" ? GetIdClass(lookUpId) : "grey"}
       >
         <label>
           <b>Comment: </b>

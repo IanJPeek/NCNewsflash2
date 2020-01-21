@@ -27,3 +27,14 @@ export const textTrimmer = body => {
     return twoSentence;
   } else return sentenceArray[0] + "...";
 };
+
+export const GetIdClass = (lookUpId) => {
+
+  let id = "grey"
+  let newId = true;
+
+  if (lookUpId % 2 === 0) { newId = false }
+  newId === true ? id = "grey" : id = "red";
+
+  return id
+}
