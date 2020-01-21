@@ -20,7 +20,7 @@ v12.10.0
 3. npm start
 4. You will be logged in as default user "jessjelly" - all comments left will be under this username and only comments attached to this username can be deleted.
 
-## As a user I can ;
+## As a user I can:
 
 - View a list of all articles
 - View a page for each topic, listing all articles associated with that topic
