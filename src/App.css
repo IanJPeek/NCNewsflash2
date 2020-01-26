@@ -2,17 +2,6 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -22,15 +11,6 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
 
 a {
@@ -73,14 +53,14 @@ li {
   margin-bottom: 10px;
 }
 
-.headWrapper{
+/* .headWrapper{
   display: grid;
   grid-template-columns: 80% 20%;
   grid-template-rows: 2;
   grid-template-areas:  "NavBar Login"
                         "SubNav Login";
 
-}
+} */
 
 .hypertext {
   color:black;
@@ -186,10 +166,10 @@ article{
  margin: 0px 5px;
 }
 
-main{
-  /* background-image: url("./images/Yellowed.jpeg");
-  opacity: 0.8; */
-}
+/* main{
+  background-image: url("./images/Yellowed.jpeg");
+  opacity: 0.8;
+} */
 
 /* .commentCard {
   border: solid black 1px;
@@ -258,7 +238,26 @@ ul {
   background-color: rgba(58, 58, 65, 0.5);
 }
 
-/* @media only screen and (min-width: 650px) {.headWrapper {
+
+@media only screen and (max-width: 410px) {
+
+  .NavBar {
+  display: grid;
+  grid-area: "NavBar";
+  height: 69px;
+  background-color:black;
+  margin: 0px;
+  padding: 1px 0px 0px 0px;
+}
+  
+.SubNav {
+  display: grid;
+  grid-area: "SubNav";
+  height: 46px;
+  background-color: rgba(8, 8, 8, 0.938);
+  margin: 0px;
+  padding: 1px 0px 1px 0px;
+}
 
 
-}} */
+}
