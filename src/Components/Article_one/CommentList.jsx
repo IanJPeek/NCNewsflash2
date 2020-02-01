@@ -14,7 +14,6 @@ function CommentList(props) {
       {comments.map(comment => {
         return (
           <CommentCard
-            className="CommentCard"
             comment={comment}
             key={comment.comment_id}
             displayDeleted={displayDeleted}

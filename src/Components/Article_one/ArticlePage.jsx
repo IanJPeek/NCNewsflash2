@@ -7,19 +7,19 @@ class ArticlePage extends Component {
   state = {
     article: {},
     isLoading: true,
-    err: null,
+    err: null
   };
 
   componentDidMount() {
-    const {noComment} = this.props
-    noComment()
+    const { noComment } = this.props;
+    noComment();
     this.getArticle();
   }
 
   render() {
     const { article, isLoading, err } = this.state;
     const { title, body, author } = article;
-    const { article_id, sort, loggedInUser} = this.props;
+    const { article_id, sort, loggedInUser } = this.props;
 
     if (err)
       return (
@@ -30,15 +30,20 @@ class ArticlePage extends Component {
     if (isLoading) return <p>Finding your article...</p>;
 
     return (
-        <article className="singleArticle">
-          <h2>{title} </h2> 
-          
-        <p>by <em>{author}</em></p>
-          <main>{body}</main>
+      <article className="singleArticle">
+        <h2 className="articleHead">{title} </h2>
+        <p className="articleAuthor">
+          by <em>{author}</em>
+        </p>
+        <main>{body}</main>
         <section>
-          <CommentSection article_id={article_id} sort={sort} loggedInUser={loggedInUser} />
+          <CommentSection
+            article_id={article_id}
+            sort={sort}
+            loggedInUser={loggedInUser}
+          />
         </section>
-        </article>
+      </article>
     );
   }
 

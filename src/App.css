@@ -20,13 +20,8 @@ a {
 .Header{
   margin-top: 0px;
   margin-bottom: 0px;
-  /* border-bottom: solid red 2px; */
   padding-top: 8px;
   padding-bottom: 4px;
-  /* color: black;
-  background-color: rgba(255, 0, 0, 0.883); */
-  /* background-image: url("./images/Yellowed.jpeg"); */
-  /* text-decoration: none; */
 }
 
 .SubHeader {
@@ -35,9 +30,6 @@ a {
   border-bottom: solid black 2px;
   padding-top: 8px;
   padding-bottom: 8px;
-  /* background-color:black;
-  color: red */
-  /* background-image: url("./images/Yellowed.jpeg"); */
 }
 
 .CommentsHeader {
@@ -45,28 +37,6 @@ a {
   padding-bottom: 8px;
 }
 
-li {
-  list-style-type: none;
-  /* color: black; */
-  border: solid black 2px;
-  border-radius: 10px;
-  margin-bottom: 10px;
-}
-
-/* .headWrapper{
-  display: grid;
-  grid-template-columns: 80% 20%;
-  grid-template-rows: 2;
-  grid-template-areas:  "NavBar Login"
-                        "SubNav Login";
-
-} */
-
-.hypertext {
-  color:black;
-  text-decoration: none;
-  /* text-decoration-style: none; */
-}
 
 .NavBar {
   display: grid;
@@ -89,11 +59,9 @@ li {
 .NavList {
   color: red;
   display: inline-block;
-  /* float: left; */
   list-style-type: none;
   margin: 0;
   padding: 1px 0px 1px 0px;
-  /* padding-left: 20px; */
 }
 
 .NavTopic {
@@ -115,67 +83,53 @@ li {
 }
 
 .LoggedIn {
-  /* display: grid; */
-  /* grid-template-columns: 80% 20%;
-  grid-template-rows: 2;
-  grid-template-areas:  "NavBar Login"
-                        "SubNav Login"; */
   grid-area: "Login";
   background-color: black;
   width: fit-content;
   height: fit-content;
-  /* height:16px; */
-  /* padding-left: 2px; */
   border-left: solid red 2px;
   border-top: solid red 2px;
-  /* border-bottom: solid red 1px; */
-  /* border: dashed red 1px; */
   padding: 0px 2px 0px 2px;
   margin: 0px;
   float: right;
   color: white;
-  /* justify-content: right;
-  align-content: right; */
-  /* text-align: right; */
-  /* line-height: 8px; */
 }
 
 #LoggedInUser {
   color: rgb(233, 103, 103);
 }
 
-/* .NavLabel {
-  color: red
-} */
+li {
+  list-style-type: none;
+  border: solid black 2px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
 
-/* .NavSelect{
-  color: red;
-  background-color: black;
-  font-size: 11px;
-} */
-
-/* .singleArticle{
-  background-image: url("./images/Yellowed.jpeg");
-} */
+.hypertext {
+  color:black;
+  text-decoration: none;
+}
 
 .notBold {
   font-weight: normal
 }
 
-article{
- margin: 0px 5px;
+main{
+  margin:16px;
 }
 
-/* main{
-  background-image: url("./images/Yellowed.jpeg");
-  opacity: 0.8;
-} */
+.articleHead{
+  margin-bottom: 2px;
+}
 
-/* .commentCard {
-  border: solid black 1px;
-  border-radius: 10px;
-  margin-bottom: 10px;
-} */
+.articleAuthor{
+margin-top:5px;
+}
+
+article{
+  margin: 0px 5px;
+}
 
 .VoteChanger {
   padding: 5px 0px;
@@ -213,8 +167,8 @@ article{
 }
 
 .addCommentButton:disabled {
-  color: rgb(88, 86, 86);
-  background-color:rgb(153, 206, 153);
+  color: rgb(119, 118, 118);
+  background-color:rgba(224, 252, 224, 0.829);
   border: solid black 1px;
   margin-bottom: 6px;
 }
@@ -225,18 +179,10 @@ article{
   border: solid black 1px;
 }
 
-.userNameInput{}
-
 ul {
-  /* margin-left: 0px; */
   padding-inline-start: 10px;
   padding-right: 10px;
-  /* color: black; */
 }
-
-/* .CommentList {
-  margin-left: 2px;
-} */
 
 .errorSad {
   width: 500px;
