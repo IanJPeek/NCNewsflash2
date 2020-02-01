@@ -8,7 +8,6 @@ class ArticlePage extends Component {
     article: {},
     isLoading: true,
     err: null,
-    hideCommentSort: true
   };
 
   componentDidMount() {

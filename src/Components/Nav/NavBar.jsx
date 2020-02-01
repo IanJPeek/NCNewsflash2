@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "@reach/router";
 
-function NavBar(props) {
+function NavBar() {
   return (
     <nav className="NavBar">
       <ul className="NavList">
