@@ -19,7 +19,7 @@ class ArticlePage extends Component {
   render() {
     const { article, isLoading, err } = this.state;
     const { title, body, author } = article;
-    const { article_id, sort} = this.props;
+    const { article_id, sort, loggedInUser} = this.props;
 
     if (err)
       return (
@@ -36,7 +36,7 @@ class ArticlePage extends Component {
         <p>by <em>{author}</em></p>
           <main>{body}</main>
         <section>
-          <CommentSection article_id={article_id} sort={sort} />
+          <CommentSection article_id={article_id} sort={sort} loggedInUser={loggedInUser} />
         </section>
         </article>
     );

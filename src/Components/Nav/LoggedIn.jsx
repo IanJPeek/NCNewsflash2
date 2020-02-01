@@ -1,18 +1,14 @@
-import React, { Component } from 'react';
+import React from "react";
 
-class LoggedIn extends Component {
-
-  state = {
-    loggedInUser: "jessjelly"
-  }
-  render() {
-    const {loggedInUser} =this.state
-    return (
-      <div className="LoggedIn">
-        <p>Logged in as: <b id="LoggedUser">{loggedInUser}</b></p>
-      </div>
-    );
-  }
+function LoggedIn(props) {
+  const { loggedInUser } = props;
+  return (
+    <div className="LoggedIn">
+      <p>
+        Logged in as: <b id="LoggedInUser">{loggedInUser}</b>
+      </p>
+    </div>
+  );
 }
 
 export default LoggedIn;

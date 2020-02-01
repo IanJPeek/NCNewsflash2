@@ -12,6 +12,7 @@ import LoggedIn from "./Components/Nav/LoggedIn"
 
 class App extends Component {
   state = {
+    loggedInUser: "jessjelly",
     sort: "",
     hideCommentSort: false,
     err: {response: {status:404,
@@ -31,7 +32,7 @@ class App extends Component {
   };
 
   render() {
-    const { sort, hideCommentSort, err } = this.state;
+    const { loggedInUser, sort, hideCommentSort, err } = this.state;
 
     return (
       <div className="App">
@@ -42,7 +43,7 @@ class App extends Component {
             sortBy={this.sortBy}
             hideCommentSort={hideCommentSort}
           />
-          <LoggedIn className="NavBar" id="LoggedIn" />
+          <LoggedIn className="NavBar" id="LoggedIn" loggedInUser={loggedInUser} />
         </div>
         <Header className="Header" />
         <SubHeader className="SubHeader" />
@@ -64,6 +65,7 @@ class App extends Component {
             path="/articles/:article_id"
             sort={sort}
             noComment={this.noComment}
+            loggedInUser={loggedInUser}
           />
           <ErrorDisplay default {...err}/>
         </Router>

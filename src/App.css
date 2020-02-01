@@ -41,14 +41,14 @@ a {
 }
 
 .CommentsHeader {
-  border-bottom: solid black 1px;
+  border-bottom: solid black 2px;
   padding-bottom: 8px;
 }
 
 li {
   list-style-type: none;
   /* color: black; */
-  border: solid black 1px;
+  border: solid black 2px;
   border-radius: 10px;
   margin-bottom: 10px;
 }
@@ -140,7 +140,7 @@ li {
   /* line-height: 8px; */
 }
 
-#LoggedUser {
+#LoggedInUser {
   color: rgb(233, 103, 103);
 }
 
@@ -183,6 +183,8 @@ article{
 
 .AddComment {
   background-color: rgb(207, 204, 204);
+  padding-top: 3px;
+  border-top: solid black 2px
 }
 
 .eraseCommentButton {
@@ -223,6 +225,7 @@ article{
   border: solid black 1px;
 }
 
+.userNameInput{}
 
 ul {
   /* margin-left: 0px; */

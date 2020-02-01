@@ -6,21 +6,25 @@ class AddComment extends Component {
     usernameInput: "jessjelly",
     commentInput: ""
   };
-
+  
   render() {
-    const { usernameInput, commentInput } = this.state;
+    let { usernameInput, commentInput } = this.state;
+    let {loggedInUser} = this.props
+    usernameInput=loggedInUser
 
     return (
         <form className="AddComment" 
         onSubmit={this.handleSubmit}>
           <label>
-            <b>Username: </b>
+            <b>Username (default): </b>
             <input
               type="text"
               placeholder="jessjelly"
               name="usernameInput"
               value={usernameInput}
               onChange={this.handleChange}
+              className="userNameInput"
+              disabled={true}
             />
           </label>
           <br></br>

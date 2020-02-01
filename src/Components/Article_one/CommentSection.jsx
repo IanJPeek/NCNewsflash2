@@ -14,6 +14,7 @@ class CommentSection extends Component {
 
   render() {
     const { comments, isLoading } = this.state;
+    const {article_id, loggedInUser} = this.props
     if (isLoading) return <p>LOADING... Retrieving comments!</p>;
 
     return (
@@ -33,8 +34,9 @@ class CommentSection extends Component {
           />
         </section>
         <AddComment
-          article_id={this.props.article_id}
+          article_id={article_id}
           displayAdded={this.displayAdded}
+          loggedInUser={loggedInUser}
         />
       </>
     );
