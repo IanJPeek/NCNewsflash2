@@ -4,7 +4,7 @@ import AddComment from "./AddComment";
 import { fetchComments } from "../api";
 
 class CommentSection extends Component {
-  state = { comments: [], isLoading: true };
+  state = { comments: [], isLoading: true, err: null };
 
   componentDidMount() {
     this.getComments();
@@ -14,17 +14,18 @@ class CommentSection extends Component {
   render() {
     const { comments, isLoading } = this.state;
     const { article_id, loggedInUser } = this.props;
+    
     if (isLoading) return <p>LOADING... Retrieving comments!</p>;
 
     return (
       <>
         <h3 className="CommentsHeader">Your Comments</h3>
-        {(comments === undefined || comments.length === 0) && (
+        {((comments !== undefined && comments.length === 0) || (comments === undefined)) && (
           <p>
             <em>Nothing!</em> Start the conversation?
           </p>
-        )}
-
+        )
+         } 
         <section>
           <CommentList
             comments={comments}
@@ -44,14 +45,18 @@ class CommentSection extends Component {
     const { article_id, sort } = this.props;
     fetchComments(article_id, sort).then(({ data }) => {
       this.setState({ comments: data.comments, isLoading: false });
-    });
+    })
   };
 
   componentDidUpdate(prevProps, prevState) {
     const { article_id, sort, votes } = this.props;
     if (prevProps !== this.props) {
       fetchComments(article_id, sort, votes).then(({ data }) => {
-        this.setState({ comments: data.comments, isLoading: false });
+        if (data !== undefined) {
+          this.setState({ comments: data.comments, isLoading: false });
+        } else {
+          this.setState({ comments: [], isLoading: false });
+        }
       });
     }
   }
