@@ -40,8 +40,10 @@ function CommentCard(props) {
         <VoteChanger votes={votes} comment_id={comment_id} />
         <button
           onClick={() => {
-            eraseComment();
-          }}
+            eraseComment();  
+          }
+        }
+        disabled={(author ==="jessjelly") ? false:true}
           className="eraseCommentButton"
         >
           Delete Comment
