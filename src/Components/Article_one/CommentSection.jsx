@@ -20,8 +20,7 @@ class CommentSection extends Component {
     return (
       <>
         <h3 className="CommentsHeader">Your Comments</h3>
-
-        {comments.length === 0 && (
+        {(comments === undefined ||comments.length === 0)  && (
           <p>
             <em>Nothing!</em> Start the conversation?
           </p>

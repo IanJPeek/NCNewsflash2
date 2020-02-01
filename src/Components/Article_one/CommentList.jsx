@@ -4,7 +4,10 @@ import CommentCard from "./CommentCard";
 function CommentList(props) {
   const { comments, displayDeleted } = props;
 
-  const arrayID = comments.map(comment => comment.comment_id)
+  if (comments === undefined) {
+    return null;
+  }
+  const arrayID = comments.map(comment => comment.comment_id);
 
   return (
     <ul>

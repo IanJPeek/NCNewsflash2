@@ -11,7 +11,7 @@ function CommentCard(props) {
   const eraseComment = () => {
     if (author === "jessjelly"){
     handleDelete(comment_id)
-    .then(displayDeleted(comment_id))
+    .then(() =>{displayDeleted(comment_id)})
     .catch(err => {
       console.dir(err);
     })}
