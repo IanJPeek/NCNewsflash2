@@ -22,7 +22,6 @@ class FrontPage extends Component {
         });
       })
       .catch(err => {
-        console.dir(err);
         this.setState({ err: err, isLoading: false });
       });
   }
@@ -39,7 +38,6 @@ class FrontPage extends Component {
           });
         })
         .catch(err => {
-          console.dir(err);
           this.setState({ err: err, isLoading: false });
         });
     }

@@ -13,7 +13,6 @@ function CommentCard(props) {
     handleDelete(comment_id)
     .then(() =>{displayDeleted(comment_id)})
     .catch(err => {
-      console.dir(err);
     })}
     else{alert("You can only delete your OWN comments!")}
   };

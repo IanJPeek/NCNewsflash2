@@ -18,7 +18,6 @@ class VoteChanger extends Component {
       : "articles/" + article_id;
 
     patchVote(request, changeValue)
-      // .then(({ data }) => console.log(data, "patched"))
       .catch(err => {
         this.setState({ votedOn: false, voteDifference: 0, errMessage: true });
       });

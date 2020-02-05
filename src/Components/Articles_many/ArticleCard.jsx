@@ -28,7 +28,7 @@ function ArticleCard(props) {
         <br></br>
         <label>
           <b>Comment count: </b>
-          {comment_count} &emsp;
+          {comment_count}
         </label>
         <label>
           <b>Created: </b>

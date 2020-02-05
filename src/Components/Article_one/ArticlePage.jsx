@@ -55,7 +55,6 @@ class ArticlePage extends Component {
         this.setState({ article: data.article, isLoading: false, err: null });
       })
       .catch(err => {
-        console.dir(err);
         this.setState({ err: err, isLoading: false });
       });
   };
